@@ -1,0 +1,3171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2026–2027 Tolleson Union Soccer (FR/SO) — Privacy-First Team & FIFA Rating Hub</title>
+  <style>
+:root {
+  --bg-body: #090f15;
+  --bg-surface: #0f172a;
+  --bg-surface-alt: #080e1a;
+  --border-subtle: #1e293b;
+  --border-strong: #334155;
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+  --accent-emerald: #10b981;
+  --accent-emerald-bright: #34d399;
+  --accent-amber: #fbbf24;
+  --accent-sky: #38bdf8;
+  --accent-rose: #fb7185;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 18px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-body);
+  color: var(--text-primary);
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.45;
+  overflow-x: hidden;
+}
+
+/* Accessible Focus Ring */
+:focus-visible {
+  outline: 2px solid var(--accent-emerald-bright);
+  outline-offset: 2px;
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .fut-card:hover,
+  .pitch-node:hover {
+    transform: none !important;
+  }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Layout Containers */
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  background: rgba(15, 23, 42, 0.96);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border-subtle);
+  padding: 12px 0;
+}
+
+.header-top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.brand-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #e11d48, #f59e0b, #10b981);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #090f15;
+  flex-shrink: 0;
+}
+
+.brand-title {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+}
+
+.brand-accent {
+  color: var(--accent-emerald-bright);
+}
+
+.brand-subtitle {
+  margin: 2px 0 0;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+.header-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Buttons & Inputs */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 12px;
+  border-radius: var(--radius-md);
+  font-size: 0.75rem;
+  font-weight: 600;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: var(--accent-emerald);
+  color: #052e16;
+}
+.btn-primary:hover {
+  background: var(--accent-emerald-bright);
+}
+
+.btn-secondary {
+  background: #1e293b;
+  color: #f1f5f9;
+  border-color: var(--border-strong);
+}
+.btn-secondary:hover {
+  background: #334155;
+}
+
+.btn-sky {
+  background: rgba(56, 189, 248, 0.16);
+  color: #7dd3fc;
+  border-color: rgba(56, 189, 248, 0.45);
+}
+.btn-sky:hover {
+  background: rgba(56, 189, 248, 0.25);
+}
+
+.btn-amber {
+  background: #f59e0b;
+  color: #1c1917;
+}
+.btn-amber:hover {
+  background: #fbbf24;
+}
+
+.btn-danger {
+  background: rgba(244, 63, 94, 0.16);
+  color: #fda4af;
+  border-color: rgba(244, 63, 94, 0.45);
+}
+.btn-danger:hover {
+  background: rgba(244, 63, 94, 0.28);
+}
+
+.btn-sm {
+  padding: 5px 9px;
+  font-size: 0.72rem;
+}
+
+.input,
+.select,
+.textarea {
+  width: 100%;
+  background: var(--bg-surface-alt);
+  color: var(--text-primary);
+  border: 1px solid var(--border-strong);
+  border-radius: 9px;
+  padding: 7px 10px;
+  font-size: 0.78rem;
+  font-family: inherit;
+}
+
+.input:disabled,
+.select:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.field-label {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 4px;
+}
+
+/* Navigation Tabs (ARIA Tablist) */
+.tablist {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  overflow-x: auto;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.nav-tab {
+  background: transparent;
+  color: var(--text-secondary);
+  border: 1px solid transparent;
+  padding: 7px 12px;
+  border-radius: 9px;
+  font-size: 0.76rem;
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.nav-tab:hover {
+  background: rgba(30, 41, 59, 0.75);
+  color: #ffffff;
+}
+
+.nav-tab[aria-selected="true"] {
+  background: #1e293b;
+  color: var(--accent-emerald-bright);
+  border-color: rgba(52, 211, 153, 0.45);
+}
+
+/* Main Content & Cards */
+.main-content {
+  flex: 1;
+  padding: 20px 0 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.panel {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  padding: 18px;
+}
+
+.subpanel {
+  background: var(--bg-surface-alt);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 12px;
+}
+
+/* Privacy & Resilience Banners */
+.notice-banner {
+  border-radius: var(--radius-lg);
+  padding: 12px 14px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 0.78rem;
+}
+
+.notice-privacy {
+  background: linear-gradient(90deg, rgba(6, 78, 59, 0.45), rgba(15, 23, 42, 0.95));
+  border: 1px solid rgba(52, 211, 153, 0.4);
+}
+
+.notice-resilience {
+  background: rgba(15, 23, 42, 0.95);
+  border: 1px solid rgba(56, 189, 248, 0.35);
+}
+
+/* Grids */
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
+  gap: 10px;
+}
+
+.kpi-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 12px 14px;
+}
+
+.kpi-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-secondary);
+}
+
+.kpi-row {
+  margin-top: 4px;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 6px;
+}
+
+.kpi-value {
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.kpi-sub {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--accent-emerald-bright);
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+}
+
+.grid-6 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 10px;
+}
+
+.roster-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 14px;
+}
+
+@media (min-width: 1024px) {
+  .grid-2 {
+    grid-template-columns: 1.15fr 1fr;
+  }
+  .roster-layout {
+    grid-template-columns: 1.8fr 1fr;
+    align-items: start;
+  }
+}
+
+/* FUT Cards (WCAG AA High-Contrast Text) */
+.fut-card {
+  position: relative;
+  border-radius: 20px 20px 26px 26px;
+  padding: 14px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+  border: 2px solid transparent;
+  text-align: left;
+  width: 100%;
+}
+
+.fut-card:hover {
+  transform: translateY(-3px);
+}
+
+.fut-card.selected {
+  box-shadow: 0 0 0 3px var(--accent-emerald-bright);
+}
+
+.fut-tier-totw {
+  background: linear-gradient(145deg, #0f172a 0%, #1e1b4b 45%, #090d16 80%, #854d0e 100%);
+  border-color: #facc15;
+  color: #fef08a;
+}
+
+.fut-tier-gold {
+  background: linear-gradient(145deg, #fef08a 0%, #eab308 55%, #ca8a04 100%);
+  border-color: #fef9c3;
+  color: #0f172a;
+}
+
+.fut-tier-silver {
+  background: linear-gradient(145deg, #f8fafc 0%, #cbd5e1 55%, #94a3b8 100%);
+  border-color: #e2e8f0;
+  color: #0f172a;
+}
+
+.fut-tier-bronze {
+  background: linear-gradient(145deg, #fed7aa 0%, #fb923c 55%, #ea580c 100%);
+  border-color: #ffedd5;
+  color: #0f172a;
+}
+
+.fut-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.fut-ovr {
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.fut-pos {
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.fut-crest {
+  width: 50px;
+  height: 50px;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.22);
+  border: 2px solid rgba(255, 255, 255, 0.45);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 0.95rem;
+}
+
+.fut-name-bar {
+  margin-top: 10px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(15, 23, 42, 0.22);
+  text-align: center;
+}
+
+.fut-tier-totw .fut-name-bar,
+.fut-tier-totw .fut-attrs,
+.fut-tier-totw .fut-foot {
+  border-top-color: rgba(250, 204, 21, 0.3);
+}
+
+.fut-name {
+  font-size: 0.95rem;
+  font-weight: 800;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.fut-meta {
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+
+.fut-attrs {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(15, 23, 42, 0.22);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3px 14px;
+  font-size: 0.76rem;
+  font-weight: 700;
+}
+
+.fut-attr-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.fut-foot {
+  margin-top: 8px;
+  padding-top: 6px;
+  border-top: 1px solid rgba(15, 23, 42, 0.22);
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+/* Badges */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 7px;
+  border-radius: 999px;
+  font-size: 0.68rem;
+  font-weight: 700;
+}
+
+.badge-emerald {
+  background: rgba(16, 185, 129, 0.2);
+  color: #6ee7b7;
+  border: 1px solid rgba(16, 185, 129, 0.45);
+}
+
+.badge-amber {
+  background: rgba(245, 158, 11, 0.2);
+  color: #fde68a;
+  border: 1px solid rgba(245, 158, 11, 0.45);
+}
+
+.badge-sky {
+  background: rgba(56, 189, 248, 0.2);
+  color: #bae6fd;
+  border: 1px solid rgba(56, 189, 248, 0.45);
+}
+
+.badge-rose {
+  background: rgba(244, 63, 94, 0.2);
+  color: #fecdd3;
+  border: 1px solid rgba(244, 63, 94, 0.45);
+}
+
+/* Pitch Visualizer */
+.pitch-surface {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  background: repeating-linear-gradient(0deg, #0f3b26 0px, #0f3b26 42px, #13472e 42px, #13472e 84px);
+  border: 3px solid rgba(255, 255, 255, 0.8);
+}
+
+.pitch-node {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  padding: 0;
+}
+
+.pitch-circle {
+  width: 48px;
+  height: 48px;
+  border-radius: 999px;
+  background: #090f15;
+  border: 2px solid var(--accent-emerald-bright);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 0.78rem;
+  position: relative;
+}
+
+.pitch-role-tag {
+  position: absolute;
+  top: -6px;
+  right: -8px;
+  background: #0f172a;
+  border: 1px solid #475569;
+  color: #6ee7b7;
+  font-size: 0.62rem;
+  padding: 1px 5px;
+  border-radius: 999px;
+}
+
+.pitch-label {
+  margin-top: 4px;
+  padding: 2px 7px;
+  border-radius: 6px;
+  background: rgba(9, 15, 21, 0.92);
+  border: 1px solid #334155;
+  color: #f8fafc;
+  font-size: 0.68rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* Tables */
+.table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.76rem;
+  text-align: left;
+}
+
+th {
+  background: var(--bg-surface-alt);
+  color: var(--text-secondary);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 10px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+td {
+  padding: 9px 10px;
+  border-bottom: 1px solid rgba(30, 41, 59, 0.7);
+  vertical-align: middle;
+}
+
+/* Inline Alert / Error / Toast */
+.alert-error {
+  background: rgba(159, 18, 57, 0.3);
+  border: 1px solid rgba(251, 113, 133, 0.6);
+  color: #ffe4e6;
+  border-radius: var(--radius-md);
+  padding: 8px 12px;
+  font-size: 0.76rem;
+  font-weight: 500;
+}
+
+.toast {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 60;
+  background: #0f172a;
+  border: 1px solid var(--accent-emerald);
+  color: #f8fafc;
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+/* Modal */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  background: rgba(2, 6, 23, 0.82);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.modal-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-xl);
+  max-width: 560px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 20px;
+}
+
+</style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="header-top">
+        <div class="brand-wrap">
+          <div class="brand-icon" aria-hidden="true">⚽</div>
+          <div>
+            <h1 class="brand-title">2026–2027 TOLLESON UNION SOCCER <span class="brand-accent">FR/SO HUB</span></h1>
+            <p class="brand-subtitle">Zero-CDN Local Build • Privacy-First Minor Protection • EA FIFA Ratings • Formation AI • Weekly Practice & Match Schedule</p>
+          </div>
+        </div>
+
+        <div class="header-actions">
+          <button id="btnExportBackup" type="button" class="btn btn-sky">Export Backup (JSON)</button>
+          <label for="inputRestoreBackup" class="btn btn-secondary" style="cursor:pointer;">
+            Restore Backup (JSON)
+            <input id="inputRestoreBackup" type="file" accept="application/json" class="sr-only" />
+          </label>
+          <button id="btnOpenAddPlayer" type="button" class="btn btn-primary">+ Add Roster Slot</button>
+        </div>
+      </div>
+
+      <nav aria-label="Team Management Sections">
+        <div class="tablist" role="tablist">
+          <button id="tab-roster" role="tab" aria-selected="true" aria-controls="panel-roster" data-tab="roster" tabindex="0" class="nav-tab">Roster &amp; FIFA Cards</button>
+          <button id="tab-formation" role="tab" aria-selected="false" aria-controls="panel-formation" data-tab="formation" tabindex="-1" class="nav-tab">Best Formation, Captains &amp; Set Pieces</button>
+          <button id="tab-stats" role="tab" aria-selected="false" aria-controls="panel-stats" data-tab="stats" tabindex="-1" class="nav-tab">Match Stats &amp; Fitness Combine</button>
+          <button id="tab-attendance" role="tab" aria-selected="false" aria-controls="panel-attendance" data-tab="attendance" tabindex="-1" class="nav-tab">Weekly Attendance &amp; Preferred Foot</button>
+          <button id="tab-videos" role="tab" aria-selected="false" aria-controls="panel-videos" data-tab="videos" tabindex="-1" class="nav-tab">Practice Videos &amp; Drill Breakdown</button>
+          <button id="tab-matches" role="tab" aria-selected="false" aria-controls="panel-matches" data-tab="matches" tabindex="-1" class="nav-tab">Next Matches &amp; Training Day Builder</button>
+          <button id="tab-profile" role="tab" aria-selected="false" aria-controls="panel-profile" data-tab="profile" tabindex="-1" class="nav-tab">Roster Slot &amp; Consent Preferences</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container main-content">
+    <!-- Privacy & Access Control Notice -->
+    <section aria-label="Privacy and Data Resilience Notices" style="display:flex; flex-direction:column; gap:10px;">
+      <div class="notice-banner notice-privacy">
+        <div>
+          <strong>Minor Privacy &amp; Access Control Notice:</strong>
+          Selfies, personal social handles, and student PII are intentionally omitted from this public static site. Browser-side views are <em>not</em> security controls—use a trusted backend with server-side authentication for coach-only edits and shared team data.
+        </div>
+        <span class="badge badge-emerald">No PII / No Selfies Published</span>
+      </div>
+
+      <div class="notice-banner notice-resilience">
+        <div>
+          <strong>Device-Local Storage Notice:</strong>
+          Changes made here save only to this browser's <code>localStorage</code> and can be lost if browser data is cleared. Use <strong>Export Backup (JSON)</strong> regularly or connect a secured shared backend for multi-device team sync.
+        </div>
+      </div>
+    </section>
+
+    <!-- KPI Strip -->
+    <section aria-label="Squad Overview Metrics" class="kpi-grid">
+      <div class="kpi-card">
+        <div class="kpi-label">FR/SO Roster Slots</div>
+        <div class="kpi-row"><span id="kpiRosterCount" class="kpi-value">22</span><span id="kpiLinkedCount" class="kpi-sub">22/22 Consent OK</span></div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Squad FIFA OVR</div>
+        <div class="kpi-row"><span id="kpiAvgOvr" class="kpi-value" style="color:#fbbf24;">78</span><span id="kpiTeamChem" class="kpi-sub" style="color:#7dd3fc;">Chem: 84/99</span></div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Best Formation</div>
+        <div class="kpi-row"><span id="kpiBestFormation" class="kpi-value" style="font-size:1.1rem; color:#34d399;">4-3-3 Attack</span><span id="kpiBestFormScore" class="kpi-sub">92% Fit</span></div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Weekly Practice Att.</div>
+        <div class="kpi-row"><span id="kpiAttendanceRate" class="kpi-value">100%</span><span id="kpiPresentRatio" class="kpi-sub">22/22 Today</span></div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Squad Fitness</div>
+        <div class="kpi-row"><span id="kpiAvgFitness" class="kpi-value" style="color:#2dd4bf;">89%</span><span id="kpiAvgSprint" class="kpi-sub" style="color:#cbd5e1;">4.72s 40yd</span></div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Season Goals / Ast</div>
+        <div class="kpi-row"><span id="kpiTotalGoals" class="kpi-value">0 G</span><span id="kpiTotalAssists" class="kpi-sub" style="color:#fde68a;">0 Assists</span></div>
+      </div>
+    </section>
+
+    <!-- Home Training Screen & Next Matches Board (Always visible to players) -->
+    <section aria-label="Home Training Screen and Upcoming Matches" class="grid-2">
+      <div class="panel" style="border-color:rgba(16, 185, 129, 0.45);">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:10px; border-bottom:1px solid #1e293b; padding-bottom:10px; margin-bottom:12px;">
+          <div>
+            <span class="badge badge-emerald">Home Training Screen</span>
+            <h2 id="homeTrainingSessionTitle" style="margin:6px 0 2px; font-size:1.05rem;">High-Press Shape, Weak-Foot Rondo &amp; Finishing</h2>
+            <p id="homeTrainingLocationMeta" style="margin:0; font-size:0.74rem; color:#cbd5e1;">3:45 PM – 5:25 PM • Practice Field #1 • Red Training Kit</p>
+          </div>
+          <button id="btnCoachEditTrainingPlan" type="button" class="btn btn-secondary btn-sm">Edit Training Day</button>
+        </div>
+
+        <div class="grid-3">
+          <div class="subpanel" style="border-color:rgba(245, 158, 11, 0.35);">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
+              <span style="font-size:0.70rem; font-weight:800; color:#fbbf24;">1. WARM-UPS</span>
+              <span id="homeWarmupMins" class="badge badge-amber">15 Min</span>
+            </div>
+            <div id="homeWarmupTitle" style="font-weight:700; font-size:0.80rem; margin-bottom:4px;">FIFA Speed Activation &amp; SAQ Ladders</div>
+            <p id="homeWarmupNotes" style="margin:0; font-size:0.72rem; color:#cbd5e1;"></p>
+          </div>
+
+          <div class="subpanel" style="border-color:rgba(16, 185, 129, 0.35);">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
+              <span style="font-size:0.70rem; font-weight:800; color:#34d399;">2. DRILLS</span>
+              <span id="homeDrillsMins" class="badge badge-emerald">40 Min</span>
+            </div>
+            <div id="homeDrillsTitle" style="font-weight:700; font-size:0.80rem; margin-bottom:4px;">6v2 Weak-Foot Rondo + 3-Zone Driven Long Switches</div>
+            <p id="homeDrillsNotes" style="margin:0; font-size:0.72rem; color:#cbd5e1;"></p>
+          </div>
+
+          <div class="subpanel" style="border-color:rgba(56, 189, 248, 0.35);">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
+              <span style="font-size:0.70rem; font-weight:800; color:#7dd3fc;">3. SCRIMMAGES</span>
+              <span id="homeScrimmageMins" class="badge badge-sky">35 Min</span>
+            </div>
+            <div id="homeScrimmageTitle" style="font-weight:700; font-size:0.80rem; margin-bottom:4px;">11v11 Best-Formation Scrimmage</div>
+            <p id="homeScrimmageNotes" style="margin:0; font-size:0.72rem; color:#cbd5e1;"></p>
+          </div>
+        </div>
+
+        <div class="subpanel" style="margin-top:12px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; font-size:0.74rem;">
+          <div><strong style="color:#34d399;">Daily Focus:</strong> <span id="homeTrainingFocusBanner"></span></div>
+          <span id="homeTrainingSpecialistsQuick" style="color:#fde68a; font-weight:700;"></span>
+        </div>
+      </div>
+
+      <div class="panel" style="display:flex; flex-direction:column; gap:10px;">
+        <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #1e293b; padding-bottom:10px;">
+          <div>
+            <span style="font-size:0.70rem; font-weight:700; color:#fbbf24; text-transform:uppercase;">2026–2027 Season Schedule</span>
+            <h2 style="margin:2px 0 0; font-size:1.05rem;">Next Matches &amp; Kit Assignment</h2>
+          </div>
+          <button id="btnCoachOpenAddMatch" type="button" class="btn btn-amber btn-sm">+ Add Match</button>
+        </div>
+        <div id="nextMatchSpotlightCard" class="subpanel" style="border-color:rgba(245, 158, 11, 0.45);"></div>
+        <div id="homeUpcomingMatchesList" style="display:flex; flex-direction:column; gap:8px; max-height:170px; overflow-y:auto;"></div>
+      </div>
+    </section>
+
+    <!-- TAB PANEL 1: ROSTER & FIFA CARDS -->
+    <section id="panel-roster" role="tabpanel" aria-labelledby="tab-roster" class="roster-layout">
+      <div style="display:flex; flex-direction:column; gap:14px;">
+        <div class="panel" style="display:flex; flex-wrap:wrap; gap:10px; align-items:flex-end;">
+          <div style="flex:1 1 190px;">
+            <label for="searchRosterInput" class="field-label">Search Roster</label>
+            <input id="searchRosterInput" type="text" class="input" placeholder="Search slot, #jersey, foot, or position..." />
+          </div>
+          <div style="flex:0 1 180px;">
+            <label for="filterSchoolSelect" class="field-label">School</label>
+            <select id="filterSchoolSelect" class="select">
+              <option value="ALL">All Schools</option>
+              <option value="Tolleson Union HS">Tolleson Union HS</option>
+              <option value="University HS">University HS</option>
+            </select>
+          </div>
+          <div style="flex:0 1 160px;">
+            <label for="filterPositionSelect" class="field-label">Position Group</label>
+            <select id="filterPositionSelect" class="select">
+              <option value="ALL">All Positions</option>
+              <option value="FWD">Forwards</option>
+              <option value="MID">Midfielders</option>
+              <option value="DEF">Defenders</option>
+              <option value="GK">Goalkeepers</option>
+            </select>
+          </div>
+          <div style="flex:0 1 180px;">
+            <label for="sortRosterSelect" class="field-label">Sort Order</label>
+            <select id="sortRosterSelect" class="select">
+              <option value="roster_asc">Roster Order (1–22)</option>
+              <option value="ovr_desc">Highest FIFA OVR</option>
+              <option value="jersey_asc">Uniform Number (#)</option>
+              <option value="speed_desc">Speed Rating</option>
+            </select>
+          </div>
+        </div>
+
+        <div id="futCardGrid" class="cards-grid"></div>
+      </div>
+
+      <!-- FIFA Inspector Studio -->
+      <aside class="panel" aria-label="EA Sports FIFA Rating Studio" style="display:flex; flex-direction:column; gap:14px;">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start; border-bottom:1px solid #1e293b; padding-bottom:10px;">
+          <div>
+            <span style="font-size:0.70rem; font-weight:700; color:#34d399; text-transform:uppercase;">EA Sports FIFA Rating Studio</span>
+            <h3 id="inspectorPlayerName" style="margin:2px 0; font-size:1.05rem;">Select a Player</h3>
+            <p id="inspectorPlayerMeta" style="margin:0; font-size:0.74rem; color:#cbd5e1;"></p>
+          </div>
+          <div style="text-align:right;">
+            <div id="inspectorOvrBadge" style="font-size:2rem; font-weight:800; color:#fbbf24; line-height:1;">79</div>
+            <span id="inspectorTierLabel" class="badge badge-amber">FUT Gold</span>
+          </div>
+        </div>
+
+        <div id="fifaRadarContainer" class="subpanel" style="display:flex; justify-content:center;"></div>
+
+        <div style="display:grid; grid-template-columns:1fr 2fr; gap:8px;">
+          <div>
+            <label for="editJerseyInput" class="field-label">Uniform #</label>
+            <input id="editJerseyInput" type="number" min="0" max="99" class="input" />
+          </div>
+          <div>
+            <label for="editNameInput" class="field-label">Roster Slot Label / Initials</label>
+            <input id="editNameInput" type="text" class="input" />
+          </div>
+          <div>
+            <label for="editPositionInput" class="field-label">Position</label>
+            <select id="editPositionInput" class="select">
+              <option value="ST">ST</option><option value="LW">LW</option><option value="RW">RW</option>
+              <option value="CAM">CAM</option><option value="CM">CM</option><option value="CDM">CDM</option>
+              <option value="LB">LB</option><option value="CB">CB</option><option value="RB">RB</option>
+              <option value="GK">GK</option>
+            </select>
+          </div>
+          <div>
+            <label for="editFootInput" class="field-label">Preferred Foot</label>
+            <select id="editFootInput" class="select">
+              <option value="Right">Right</option>
+              <option value="Left">Left</option>
+              <option value="Both (5★ Weak Foot)">Both (5★ Weak Foot)</option>
+            </select>
+          </div>
+        </div>
+
+        <div id="jerseyKitCompatibility" class="subpanel" style="font-size:0.72rem; color:#fde68a;"></div>
+
+        <div style="display:flex; flex-direction:column; gap:8px; font-size:0.76rem;">
+          <div>
+            <label for="sliderSpeed" class="field-label">Speed: <strong id="valSpeed" style="color:#34d399;">80</strong></label>
+            <input id="sliderSpeed" type="range" min="40" max="99" style="width:100%;" />
+          </div>
+          <div>
+            <label for="sliderStrength" class="field-label">Strength: <strong id="valStrength" style="color:#34d399;">78</strong></label>
+            <input id="sliderStrength" type="range" min="40" max="99" style="width:100%;" />
+          </div>
+          <div>
+            <label for="sliderBallControl" class="field-label">Ball Control: <strong id="valBallControl" style="color:#34d399;">82</strong></label>
+            <input id="sliderBallControl" type="range" min="40" max="99" style="width:100%;" />
+          </div>
+          <div>
+            <label for="sliderLongPass" class="field-label">Long Pass: <strong id="valLongPass" style="color:#34d399;">78</strong></label>
+            <input id="sliderLongPass" type="range" min="40" max="99" style="width:100%;" />
+          </div>
+          <div>
+            <label for="sliderVision" class="field-label">Vision: <strong id="valVision" style="color:#34d399;">80</strong></label>
+            <input id="sliderVision" type="range" min="40" max="99" style="width:100%;" />
+          </div>
+          <div>
+            <label for="sliderChemistry" class="field-label">Chemistry: <strong id="valChemistry" style="color:#7dd3fc;">85</strong></label>
+            <input id="sliderChemistry" type="range" min="40" max="99" style="width:100%;" />
+          </div>
+        </div>
+
+        <div style="display:flex; justify-content:space-between; padding-top:8px; border-top:1px solid #1e293b;">
+          <button id="btnDeleteSelectedPlayer" type="button" class="btn btn-danger btn-sm">Delete Roster Slot</button>
+        </div>
+      </aside>
+    </section>
+
+    <!-- TAB PANEL 2: FORMATION, CAPTAINS & SET PIECES -->
+    <section id="panel-formation" role="tabpanel" aria-labelledby="tab-formation" class="hidden" style="display:flex; flex-direction:column; gap:18px;">
+      <div class="panel" style="display:flex; flex-direction:column; gap:12px;">
+        <div style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; align-items:center;">
+          <div>
+            <h2 style="margin:0; font-size:1.05rem;">Team Captains, PK, Corner &amp; Free Kick Takers</h2>
+            <p style="margin:2px 0 0; font-size:0.75rem; color:#cbd5e1;">Assign leadership and set-piece specialists based on FIFA attributes and Preferred Foot.</p>
+          </div>
+          <button id="btnAutoPickSpecialists" type="button" class="btn btn-amber btn-sm">Auto-Pick Specialists</button>
+        </div>
+
+        <div class="grid-6">
+          <div class="subpanel">
+            <label for="selectCaptain1" class="field-label">Team Captain (1st)</label>
+            <select id="selectCaptain1" class="select"></select>
+            <div id="metaCaptain1" style="font-size:0.68rem; color:#cbd5e1; margin-top:4px;"></div>
+          </div>
+          <div class="subpanel">
+            <label for="selectCaptain2" class="field-label">Vice-Captain (2nd)</label>
+            <select id="selectCaptain2" class="select"></select>
+            <div id="metaCaptain2" style="font-size:0.68rem; color:#cbd5e1; margin-top:4px;"></div>
+          </div>
+          <div class="subpanel">
+            <label for="selectPkTaker" class="field-label">Penalty Kick (PK) Taker</label>
+            <select id="selectPkTaker" class="select"></select>
+            <div id="metaPkTaker" style="font-size:0.68rem; color:#cbd5e1; margin-top:4px;"></div>
+          </div>
+          <div class="subpanel">
+            <label for="selectFkTaker" class="field-label">Direct Free Kick Taker</label>
+            <select id="selectFkTaker" class="select"></select>
+            <div id="metaFkTaker" style="font-size:0.68rem; color:#cbd5e1; margin-top:4px;"></div>
+          </div>
+          <div class="subpanel">
+            <label for="selectCornerLeft" class="field-label">Left Corner Taker</label>
+            <select id="selectCornerLeft" class="select"></select>
+            <div id="metaCornerLeft" style="font-size:0.68rem; color:#cbd5e1; margin-top:4px;"></div>
+          </div>
+          <div class="subpanel">
+            <label for="selectCornerRight" class="field-label">Right Corner Taker</label>
+            <select id="selectCornerRight" class="select"></select>
+            <div id="metaCornerRight" style="font-size:0.68rem; color:#cbd5e1; margin-top:4px;"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div class="panel" style="display:flex; flex-direction:column; gap:12px;">
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <h3 style="margin:0; font-size:1rem;">Best Formation Recommender</h3>
+            <label for="chkAvailableOnly" style="display:flex; align-items:center; gap:6px; font-size:0.75rem; cursor:pointer;">
+              <input id="chkAvailableOnly" type="checkbox" checked />
+              <span>Present Players Only</span>
+            </label>
+          </div>
+          <div id="formationRankingList" style="display:flex; flex-direction:column; gap:8px;"></div>
+        </div>
+
+        <div class="panel" style="display:flex; flex-direction:column; gap:12px;">
+          <div style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; align-items:center;">
+            <h3 id="pitchHeaderTitle" style="margin:0; font-size:1rem;">Starting XI Pitch Map</h3>
+            <div style="display:flex; gap:10px; font-size:0.76rem;">
+              <span>XI OVR: <strong id="pitchStartingOvr" style="color:#fbbf24;">80</strong></span>
+              <span>Chemistry: <strong id="pitchStartingChem" style="color:#7dd3fc;">86/99</strong></span>
+            </div>
+          </div>
+
+          <div class="pitch-surface">
+            <svg style="position:absolute; inset:0; width:100%; height:100%; opacity:0.65; pointer-events:none;" viewBox="0 0 600 780" fill="none" aria-hidden="true">
+              <rect x="24" y="24" width="552" height="732" stroke="white" stroke-width="3"/>
+              <line x1="24" y1="390" x2="576" y2="390" stroke="white" stroke-width="3"/>
+              <circle cx="300" cy="390" r="68" stroke="white" stroke-width="3"/>
+              <rect x="145" y="24" width="310" height="120" stroke="white" stroke-width="3"/>
+              <rect x="145" y="636" width="310" height="120" stroke="white" stroke-width="3"/>
+            </svg>
+            <div id="pitchNodesContainer" style="position:absolute; inset:0;"></div>
+          </div>
+
+          <div class="subpanel">
+            <div style="font-size:0.72rem; font-weight:700; color:#cbd5e1; margin-bottom:6px;">Rotation &amp; Substitutes Bench</div>
+            <div id="pitchBenchContainer" style="display:flex; flex-wrap:wrap; gap:6px;"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB PANEL 3: MATCH STATS & FITNESS COMBINE -->
+    <section id="panel-stats" role="tabpanel" aria-labelledby="tab-stats" class="hidden panel">
+      <h2 style="margin:0 0 4px; font-size:1.05rem;">Match Stats &amp; Fitness Combine Ledger</h2>
+      <p style="margin:0 0 12px; font-size:0.76rem; color:#cbd5e1;">Track goals, assists, 40-yard sprint times, beep test levels, and conditioning percentages.</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Uniform # / Slot</th>
+              <th>Grade / Foot</th>
+              <th>Pos</th>
+              <th>OVR</th>
+              <th>Goals</th>
+              <th>Assists</th>
+              <th>40yd (s)</th>
+              <th>Beep Lvl</th>
+              <th>Stamina %</th>
+              <th>Inspect</th>
+            </tr>
+          </thead>
+          <tbody id="statsFitnessTableBody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- TAB PANEL 4: WEEKLY ATTENDANCE & PREFERRED FOOT -->
+    <section id="panel-attendance" role="tabpanel" aria-labelledby="tab-attendance" class="hidden grid-2">
+      <div class="panel" style="display:flex; flex-direction:column; gap:12px;">
+        <div style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; align-items:center;">
+          <div>
+            <h2 style="margin:0; font-size:1.05rem;">Weekly Practice Attendance (Mon–Fri) &amp; Preferred Foot</h2>
+            <p style="margin:2px 0 0; font-size:0.75rem; color:#cbd5e1;">Click any Mon–Fri pill to cycle Present (P), Late (L), Excused (E), or Absent (A).</p>
+          </div>
+          <button id="btnMarkAllPresent" type="button" class="btn btn-primary btn-sm">Mark All Present</button>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Uniform # / Slot</th>
+                <th>Today</th>
+                <th>Mon</th>
+                <th>Tue</th>
+                <th>Wed</th>
+                <th>Thu</th>
+                <th>Fri</th>
+                <th>Weekly %</th>
+                <th>Preferred Foot</th>
+              </tr>
+            </thead>
+            <tbody id="attendanceFootTableBody"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="panel" style="display:flex; flex-direction:column; gap:12px;">
+        <h3 style="margin:0; font-size:1rem;">Preferred Foot Distribution</h3>
+        <p style="margin:0; font-size:0.75rem; color:#cbd5e1;">Squad balance across Right, Left, and 5★ Both-footed athletes.</p>
+        <div id="footTallyContainer" style="display:flex; flex-direction:column; gap:8px;"></div>
+      </div>
+    </section>
+
+    <!-- TAB PANEL 5: PRACTICE VIDEOS & EXERCISE BREAKDOWN -->
+    <section id="panel-videos" role="tabpanel" aria-labelledby="tab-videos" class="hidden grid-2">
+      <div class="panel" style="display:flex; flex-direction:column; gap:12px;">
+        <h2 style="margin:0; font-size:1.05rem;">Training Exercise Breakdown (5 Phases)</h2>
+        <div id="trainingExercisesBreakdownList" style="display:flex; flex-direction:column; gap:10px;"></div>
+      </div>
+
+      <div class="panel" style="display:flex; flex-direction:column; gap:12px;">
+        <div style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; align-items:center;">
+          <h2 style="margin:0; font-size:1.05rem;">Practice Videos (YouTube, TikTok, Facebook)</h2>
+          <div style="display:flex; gap:6px;">
+            <button type="button" data-video-filter="ALL" class="video-filter-btn btn btn-secondary btn-sm">All</button>
+            <button type="button" data-video-filter="YouTube" class="video-filter-btn btn btn-secondary btn-sm">YouTube</button>
+            <button type="button" data-video-filter="TikTok" class="video-filter-btn btn btn-secondary btn-sm">TikTok</button>
+            <button type="button" data-video-filter="Facebook" class="video-filter-btn btn btn-secondary btn-sm">Facebook</button>
+          </div>
+        </div>
+
+        <form id="formAddPracticeVideo" class="subpanel" style="display:flex; flex-direction:column; gap:10px;">
+          <div id="videoFormError" class="alert-error hidden" role="alert"></div>
+          <div style="display:grid; grid-template-columns:1fr 2fr; gap:8px;">
+            <div>
+              <label for="videoPlatformSelect" class="field-label">Platform</label>
+              <select id="videoPlatformSelect" class="select">
+                <option value="YouTube">YouTube</option>
+                <option value="TikTok">TikTok</option>
+                <option value="Facebook">Facebook</option>
+              </select>
+            </div>
+            <div>
+              <label for="videoTitleInput" class="field-label">Drill / Video Title *</label>
+              <input id="videoTitleInput" type="text" required class="input" placeholder="e.g. 6v2 Rondo Receiving" />
+            </div>
+          </div>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px;">
+            <div>
+              <label for="videoExerciseCategory" class="field-label">Exercise Category</label>
+              <select id="videoExerciseCategory" class="select">
+                <option value="Speed & Agility Warm-Up">Speed &amp; Agility Warm-Up</option>
+                <option value="Ball Control & Rondo">Ball Control &amp; Rondo</option>
+                <option value="Long Pass & Switching Play">Long Pass &amp; Switching Play</option>
+                <option value="PK, Corner & Free Kick Lab">PK, Corner &amp; Free Kick Lab</option>
+                <option value="Tactical Formation & Pressing">Tactical Formation &amp; Pressing</option>
+              </select>
+            </div>
+            <div>
+              <label for="videoUrlInput" class="field-label">HTTPS Video URL *</label>
+              <input id="videoUrlInput" type="url" required class="input" placeholder="https://www.youtube.com/watch?v=..." />
+            </div>
+          </div>
+          <div>
+            <label for="videoNotesInput" class="field-label">Coaching Cue / Notes</label>
+            <input id="videoNotesInput" type="text" class="input" placeholder="Key technique cues..." />
+          </div>
+          <button type="submit" class="btn btn-primary">Validate &amp; Add Video</button>
+        </form>
+
+        <div id="practiceVideosGrid" class="cards-grid"></div>
+      </div>
+    </section>
+
+    <!-- TAB PANEL 6: NEXT MATCHES & TRAINING DAY BUILDER -->
+    <section id="panel-matches" role="tabpanel" aria-labelledby="tab-matches" class="hidden grid-2">
+      <div class="panel" style="display:flex; flex-direction:column; gap:12px;">
+        <h2 style="margin:0; font-size:1.05rem;">Training Day Breakdown Builder</h2>
+        <form id="formTrainingDayBuilder" style="display:flex; flex-direction:column; gap:10px;">
+          <div id="trainingFormError" class="alert-error hidden" role="alert"></div>
+          <div>
+            <label for="trainSessionTitleInput" class="field-label">Session Title *</label>
+            <input id="trainSessionTitleInput" type="text" required class="input" value="High-Press Shape, Weak-Foot Rondo & Finishing" />
+          </div>
+          <div>
+            <label for="trainLocationMetaInput" class="field-label">Time, Field &amp; Kit *</label>
+            <input id="trainLocationMetaInput" type="text" required class="input" value="3:45 PM – 5:25 PM • Practice Field #1 • Red Training Kit" />
+          </div>
+          <div style="display:grid; grid-template-columns:2fr 1fr; gap:8px;">
+            <div>
+              <label for="trainWarmupPresetSelect" class="field-label">1. Warm-Up Routine</label>
+              <select id="trainWarmupPresetSelect" class="select">
+                <option value="FIFA Speed Activation & SAQ Ladders">FIFA Speed Activation &amp; SAQ Ladders</option>
+                <option value="FIFA 11+ Injury Prevention & Core">FIFA 11+ Injury Prevention &amp; Core</option>
+                <option value="Two-Footed Ball Mastery Touches">Two-Footed Ball Mastery Touches</option>
+              </select>
+            </div>
+            <div>
+              <label for="trainWarmupMinsInput" class="field-label">Minutes</label>
+              <input id="trainWarmupMinsInput" type="number" min="5" max="45" value="15" class="input" />
+            </div>
+          </div>
+          <div>
+            <label for="trainWarmupNotesInput" class="field-label">Warm-Up Instructions</label>
+            <input id="trainWarmupNotesInput" type="text" class="input" value="Dynamic hip mobility, 2-in-each-rung footwork, and 10yd reactive sprint bursts." />
+          </div>
+          <div style="display:grid; grid-template-columns:2fr 1fr; gap:8px;">
+            <div>
+              <label for="trainDrill1Select" class="field-label">2. Primary Drill</label>
+              <select id="trainDrill1Select" class="select">
+                <option value="6v2 Weak-Foot Rondo + 3-Zone Driven Long Switches">6v2 Weak-Foot Rondo + Long Switches</option>
+                <option value="1v1 Wing Take-On & Cutback Crosses">1v1 Wing Take-On &amp; Cutback Crosses</option>
+                <option value="PK, Inswinging Corner & Free Kick Lab">PK, Corner &amp; Free Kick Lab</option>
+              </select>
+            </div>
+            <div>
+              <label for="trainDrillsMinsInput" class="field-label">Minutes</label>
+              <input id="trainDrillsMinsInput" type="number" min="10" max="60" value="40" class="input" />
+            </div>
+          </div>
+          <div>
+            <label for="trainDrillsNotesInput" class="field-label">Drill Coaching Cues</label>
+            <input id="trainDrillsNotesInput" type="text" class="input" value="Scan before receiving on back foot; switch point of attack to overlapping wing-backs." />
+          </div>
+          <div style="display:grid; grid-template-columns:2fr 1fr; gap:8px;">
+            <div>
+              <label for="trainScrimmagePresetSelect" class="field-label">3. Scrimmage Format</label>
+              <select id="trainScrimmagePresetSelect" class="select">
+                <option value="11v11 Best-Formation Scrimmage & Set-Piece Live Scenario">11v11 Best-Formation Scrimmage</option>
+                <option value="9v9 Half-Pitch High-Press Transition Game">9v9 High-Press Transition Game</option>
+                <option value="Attack vs. Defense Wave Scrimmage">Attack vs. Defense Wave Scrimmage</option>
+              </select>
+            </div>
+            <div>
+              <label for="trainScrimmageMinsInput" class="field-label">Minutes</label>
+              <input id="trainScrimmageMinsInput" type="number" min="10" max="60" value="35" class="input" />
+            </div>
+          </div>
+          <div>
+            <label for="trainScrimmageNotesInput" class="field-label">Scrimmage Rules</label>
+            <input id="trainScrimmageNotesInput" type="text" class="input" value="6-second counter-press rule; final 10 mins live PK, Corner & Direct Free Kick routines." />
+          </div>
+          <div>
+            <label for="trainDailyFocusInput" class="field-label">Daily Focus Message</label>
+            <input id="trainDailyFocusInput" type="text" class="input" value="Communicate line height early, play 2-touch out of pressure, and finish rebounds." />
+          </div>
+          <button type="submit" class="btn btn-primary">Publish to Home Training Screen</button>
+        </form>
+      </div>
+
+      <div class="panel" style="display:flex; flex-direction:column; gap:12px;">
+        <h2 style="margin:0; font-size:1.05rem;">Next Matches Manager (<span id="totalMatchesCountLabel">3</span>)</h2>
+        <form id="formAddNextMatch" class="subpanel" style="display:flex; flex-direction:column; gap:8px;">
+          <div id="matchFormError" class="alert-error hidden" role="alert"></div>
+          <div style="display:grid; grid-template-columns:2fr 1fr; gap:8px;">
+            <div>
+              <label for="matchOpponentInput" class="field-label">Opponent School *</label>
+              <input id="matchOpponentInput" type="text" required class="input" placeholder="e.g. Millennium HS (FR/SO)" />
+            </div>
+            <div>
+              <label for="matchDateInput" class="field-label">Date *</label>
+              <input id="matchDateInput" type="date" required class="input" value="2026-12-10" />
+            </div>
+          </div>
+          <div style="display:grid; grid-template-columns:1fr 1fr 2fr; gap:8px;">
+            <div>
+              <label for="matchTimeInput" class="field-label">Kickoff *</label>
+              <input id="matchTimeInput" type="text" required class="input" value="4:00 PM" />
+            </div>
+            <div>
+              <label for="matchVenueTypeSelect" class="field-label">Kit</label>
+              <select id="matchVenueTypeSelect" class="select">
+                <option value="Home">Home</option>
+                <option value="Away">Away</option>
+              </select>
+            </div>
+            <div>
+              <label for="matchLocationInput" class="field-label">Stadium / Arrival Note</label>
+              <input id="matchLocationInput" type="text" class="input" placeholder="Tolleson Stadium • Arrive 3:00 PM" />
+            </div>
+          </div>
+          <button type="submit" class="btn btn-amber">+ Add Match</button>
+        </form>
+
+        <div id="fullMatchesScheduleList" style="display:flex; flex-direction:column; gap:8px; max-height:360px; overflow-y:auto;"></div>
+      </div>
+    </section>
+
+    <!-- TAB PANEL 7: PRIVACY-SAFE ROSTER SLOT & CONSENT PREFERENCES -->
+    <section id="panel-profile" role="tabpanel" aria-labelledby="tab-profile" class="hidden panel">
+      <h2 style="margin:0 0 4px; font-size:1.05rem;">Roster Slot &amp; Guardian Consent Preferences (Privacy-First)</h2>
+      <p style="margin:0 0 14px; font-size:0.76rem; color:#cbd5e1;">
+        To protect minors on a public site, this section does not collect selfies, email addresses, or personal social handles. Update only non-identifying slot preferences with guardian consent.
+      </p>
+
+      <form id="playerProfileForm" style="max-width:600px; display:flex; flex-direction:column; gap:12px;">
+        <div id="profileFormError" class="alert-error hidden" role="alert"></div>
+        <div>
+          <label for="profileRosterSelect" class="field-label">Select Official Roster Slot</label>
+          <select id="profileRosterSelect" class="select"></select>
+        </div>
+        <div style="display:grid; grid-template-columns:2fr 1fr; gap:10px;">
+          <div>
+            <label for="profileLabelInput" class="field-label">Non-Identifying Slot Label / Initials</label>
+            <input id="profileLabelInput" type="text" required class="input" />
+          </div>
+          <div>
+            <label for="profileUniformSelect" class="field-label">Uniform #</label>
+            <select id="profileUniformSelect" class="select"></select>
+          </div>
+        </div>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
+          <div>
+            <label for="profileFootSelect" class="field-label">Preferred Foot</label>
+            <select id="profileFootSelect" class="select">
+              <option value="Right">Right</option>
+              <option value="Left">Left</option>
+              <option value="Both (5★ Weak Foot)">Both (5★ Weak Foot)</option>
+            </select>
+          </div>
+          <div>
+            <label for="profileWeakFootSelect" class="field-label">Weak Foot Rating</label>
+            <select id="profileWeakFootSelect" class="select">
+              <option value="5★ Weak Foot">5★ Weak Foot</option>
+              <option value="4★ Weak Foot">4★ Weak Foot</option>
+              <option value="3★ Weak Foot">3★ Weak Foot</option>
+              <option value="2★ Weak Foot">2★ Weak Foot</option>
+            </select>
+          </div>
+        </div>
+        <label for="profileConsentCheck" style="display:flex; align-items:center; gap:8px; font-size:0.78rem; cursor:pointer;">
+          <input id="profileConsentCheck" type="checkbox" checked />
+          <span>Parent/guardian consent verified for minor participation &amp; non-identifying roster display.</span>
+        </label>
+        <button type="submit" class="btn btn-primary" style="align-self:flex-start;">Save Slot Preferences</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- Add Roster Slot Modal -->
+  <div id="modalAddPlayer" class="modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="addModalTitle">
+    <div class="modal-card">
+      <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #1e293b; padding-bottom:10px; margin-bottom:12px;">
+        <h3 id="addModalTitle" style="margin:0; font-size:1rem;">Add Roster Slot (Privacy-Safe)</h3>
+        <button id="btnCloseAddPlayer" type="button" class="btn btn-secondary btn-sm" aria-label="Close modal">✕</button>
+      </div>
+      <form id="formAddPlayer" style="display:flex; flex-direction:column; gap:10px;">
+        <div id="addPlayerError" class="alert-error hidden" role="alert"></div>
+        <div style="display:grid; grid-template-columns:2fr 1fr 1fr; gap:8px;">
+          <div>
+            <label for="newPlayerName" class="field-label">Slot Label / Initials *</label>
+            <input id="newPlayerName" type="text" required class="input" placeholder="e.g. FR/SO Slot #23 (C.M.)" />
+          </div>
+          <div>
+            <label for="newPlayerJersey" class="field-label">Uniform #</label>
+            <input id="newPlayerJersey" type="number" min="0" max="99" value="23" class="input" />
+          </div>
+          <div>
+            <label for="newPlayerPos" class="field-label">Position</label>
+            <select id="newPlayerPos" class="select">
+              <option value="ST">ST</option><option value="LW">LW</option><option value="RW">RW</option>
+              <option value="CAM">CAM</option><option value="CM">CM</option><option value="CDM">CDM</option>
+              <option value="LB">LB</option><option value="CB">CB</option><option value="RB">RB</option>
+              <option value="GK">GK</option>
+            </select>
+          </div>
+        </div>
+        <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px;">
+          <div>
+            <label for="newPlayerGrade" class="field-label">Grade</label>
+            <select id="newPlayerGrade" class="select">
+              <option value="9">9</option><option value="10" selected>10</option>
+            </select>
+          </div>
+          <div>
+            <label for="newPlayerSchool" class="field-label">School</label>
+            <select id="newPlayerSchool" class="select">
+              <option value="Tolleson Union HS">Tolleson Union HS</option>
+              <option value="University HS">University HS</option>
+            </select>
+          </div>
+          <div>
+            <label for="newPlayerFoot" class="field-label">Preferred Foot</label>
+            <select id="newPlayerFoot" class="select">
+              <option value="Right">Right</option><option value="Left">Left</option><option value="Both (5★ Weak Foot)">Both</option>
+            </select>
+          </div>
+        </div>
+        <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:8px;">
+          <div><label for="newPlayerSpeed" class="field-label">Speed</label><input id="newPlayerSpeed" type="number" min="40" max="99" value="78" class="input" /></div>
+          <div><label for="newPlayerStrength" class="field-label">Strength</label><input id="newPlayerStrength" type="number" min="40" max="99" value="76" class="input" /></div>
+          <div><label for="newPlayerControl" class="field-label">Ball Control</label><input id="newPlayerControl" type="number" min="40" max="99" value="77" class="input" /></div>
+          <div><label for="newPlayerPass" class="field-label">Long Pass</label><input id="newPlayerPass" type="number" min="40" max="99" value="75" class="input" /></div>
+          <div><label for="newPlayerVision" class="field-label">Vision</label><input id="newPlayerVision" type="number" min="40" max="99" value="76" class="input" /></div>
+          <div><label for="newPlayerChem" class="field-label">Chemistry</label><input id="newPlayerChem" type="number" min="40" max="99" value="80" class="input" /></div>
+        </div>
+        <label for="newPlayerConsent" style="display:flex; align-items:center; gap:8px; font-size:0.76rem; cursor:pointer;">
+          <input id="newPlayerConsent" type="checkbox" checked />
+          <span>Guardian consent verified for minor roster inclusion.</span>
+        </label>
+        <button type="submit" class="btn btn-primary">Add Roster Slot</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast Status Region -->
+  <div id="toastNotification" class="toast hidden" role="status" aria-live="polite">
+    <span id="toastText">Saved</span>
+  </div>
+
+  <script>
+// Safe DOM creation and strict input/URL validation utilities
+
+window.AppValidation = (() => {
+  const ALLOWED_VIDEO_HOSTS = [
+    'youtube.com',
+    'www.youtube.com',
+    'm.youtube.com',
+    'youtu.be',
+    'tiktok.com',
+    'www.tiktok.com',
+    'vm.tiktok.com',
+    'facebook.com',
+    'www.facebook.com',
+    'm.facebook.com',
+    'fb.watch'
+  ];
+
+  function el(tag, attrs = {}, children = []) {
+    const node = document.createElement(tag);
+    Object.entries(attrs).forEach(([key, val]) => {
+      if (val === undefined || val === null) return;
+      if (key === 'className') {
+        node.className = val;
+      } else if (key === 'textContent') {
+        node.textContent = String(val);
+      } else if (key.startsWith('data-')) {
+        node.setAttribute(key, String(val));
+      } else if (key === 'disabled' || key === 'checked' || key === 'selected') {
+        node[key] = Boolean(val);
+      } else {
+        node.setAttribute(key, String(val));
+      }
+    });
+
+    const childList = Array.isArray(children) ? children : [children];
+    childList.forEach(c => {
+      if (c === null || c === undefined) return;
+      if (typeof c === 'string' || typeof c === 'number') {
+        node.appendChild(document.createTextNode(String(c)));
+      } else {
+        node.appendChild(c);
+      }
+    });
+    return node;
+  }
+
+  function clearEl(node) {
+    while (node && node.firstChild) {
+      node.removeChild(node.firstChild);
+    }
+  }
+
+  function clampInt(val, min, max, fallback) {
+    const n = parseInt(val, 10);
+    if (Number.isNaN(n)) return fallback;
+    return Math.min(max, Math.max(min, n));
+  }
+
+  function clampFloat(val, min, max, fallback) {
+    const n = parseFloat(val);
+    if (Number.isNaN(n)) return fallback;
+    return Math.min(max, Math.max(min, n));
+  }
+
+  function sanitizeText(val, maxLen = 120) {
+    return String(val || '').replace(/[\u0000-\u001F\u007F]/g, '').trim().slice(0, maxLen);
+  }
+
+  function validateVideoUrl(rawUrl, expectedPlatform) {
+    const cleaned = sanitizeText(rawUrl, 500);
+    if (!cleaned) {
+      return { valid: false, error: 'Please enter a video URL.' };
+    }
+    let parsed;
+    try {
+      parsed = new URL(cleaned);
+    } catch (e) {
+      return { valid: false, error: 'Invalid URL format. Include https:// at the start.' };
+    }
+    if (parsed.protocol !== 'https:') {
+      return { valid: false, error: 'Only secure https:// video links are permitted.' };
+    }
+    const host = parsed.hostname.toLowerCase();
+    if (!ALLOWED_VIDEO_HOSTS.includes(host)) {
+      return {
+        valid: false,
+        error: 'URL must be from YouTube (youtube.com / youtu.be), TikTok (tiktok.com), or Facebook (facebook.com / fb.watch).'
+      };
+    }
+    if (expectedPlatform === 'YouTube' && !host.includes('youtu')) {
+      return { valid: false, error: 'Selected platform is YouTube, but the URL is not a YouTube link.' };
+    }
+    if (expectedPlatform === 'TikTok' && !host.includes('tiktok')) {
+      return { valid: false, error: 'Selected platform is TikTok, but the URL is not a TikTok link.' };
+    }
+    if (expectedPlatform === 'Facebook' && !host.includes('facebook') && !host.includes('fb.watch')) {
+      return { valid: false, error: 'Selected platform is Facebook, but the URL is not a Facebook link.' };
+    }
+    return { valid: true, url: parsed.toString() };
+  }
+
+  function showInlineError(containerId, msg) {
+    const box = document.getElementById(containerId);
+    if (!box) return;
+    if (!msg) {
+      box.textContent = '';
+      box.classList.add('hidden');
+    } else {
+      box.textContent = msg;
+      box.classList.remove('hidden');
+    }
+  }
+
+  return {
+    el,
+    clearEl,
+    clampInt,
+    clampFloat,
+    sanitizeText,
+    validateVideoUrl,
+    showInlineError
+  };
+})();
+
+</script>
+  <script>
+// Privacy-first static roster & domain data for 2026-2027 Tolleson Union Soccer (FR/SO).
+// NOTE: Public static builds avoid publishing student-athlete selfies, personal social handles,
+// or unconsented full-name PII. Each slot uses non-identifying roster codes/initials by default
+// with a guardian-consent flag; coaches can label slots locally or connect a secured backend.
+
+window.AppData = (() => {
+  const HOME_UNIFORM_NUMBERS = [1, 2, 3, 4, 5, 6, 7, 8, 10, 11, 12, 13, 14, 15, 16, 17, 18, 20, 23, 24];
+  const AWAY_UNIFORM_NUMBERS = [1, 2, 4, 6, 7, 10, 11, 12, 14, 15, 16, 17, 18, 19, 20, 22, 23];
+  const ALL_VALID_UNIFORM_NUMBERS = Array.from(new Set([...HOME_UNIFORM_NUMBERS, ...AWAY_UNIFORM_NUMBERS])).sort((a, b) => a - b);
+
+  // 22 FR/SO Roster Slots (Privacy-safe initials & grade/school metadata)
+  const INITIAL_ROSTER = [
+    { id: 'slot_1', rosterOrder: 1, jersey: 1, label: 'FR/SO Slot #1 (D.A.)', grade: 10, school: 'Tolleson Union HS', position: 'GK', foot: 'Right', weakFoot: '4★ Weak Foot', consentVerified: true, fifa: { speed: 74, strength: 84, ballControl: 75, longPass: 83, vision: 82, chemistry: 88 }, stats: { goals: 0, assists: 0, minutes: 0 }, fitness: { sprint40: 4.88, beepLevel: 11.6, stamina: 90 }, attendance: { status: 'Present', rate: 100, week: { Mon: 'P', Tue: 'P', Wed: 'P', Thu: 'P', Fri: 'P' } } },
+    { id: 'slot_2', rosterOrder: 2, jersey: 2, label: 'FR/SO Slot #2 (A.A.)', grade: 9, school: 'Tolleson Union HS', position: 'RB', foot: 'Right', weakFoot: '4★ Weak Foot', consentVerified: true, fifa: { speed: 88, strength: 76, ballControl: 80, longPass: 77, vision: 78, chemistry: 85 }, stats: { goals: 0, assists: 0, minutes: 0 }, fitness: { sprint40: 4.58, beepLevel: 13.1, stamina: 92 }, attendance: { status: 'Present', rate: 100, week: { Mon: 'P', Tue: 'P', Wed: 'P', Thu: 'P', Fri: 'P' } } },
+    { id: 'slot_3', rosterOrder: 3, jersey: 3, label: 'FR/SO Slot #3 (A.J.A.)', grade: 10, school: 'University HS', position: 'LB', foot: 'Left', weakFoot: '4★ Weak Foot', consentVerified: true, fifa: { speed: 85, strength: 78, ballControl: 79, longPass: 78, vision: 77, chemistry: 84 }, stats: { goals: 0, assists: 0, minutes: 0 }, fitness: { sprint40: 4.64, beepLevel: 12.8, stamina: 90 }, attendance: { status: 'Present', rate: 100, week: { Mon: 'P', Tue: 'P', Wed: 'P', Thu: 'P', Fri: 'P' } } },
+    { id: 'slot_4', rosterOrder: 4, jersey: 4, label: 'FR/SO Slot #4 (M.B.)', grade: 10, school: 'Tolleson Union HS', position: 'CB', foot: 'Right', weakFoot: '3★ Weak Foot', consentVerified: true, fifa: { speed: 79, strength: 89, ballControl: 76, longPass: 80, vision: 78, chemistry: 87 }, stats: { goals: 0, assists: 0, minutes: 0 }, fitness: { sprint40: 4.78, beepLevel: 12.7, stamina: 91 }, attendance: { status: 'Present', rate: 100, week: { Mon: 'P', Tue: 'P', Wed: 'P', Thu: 'P', Fri: 'P' } } },
+    { id: 'slot_5', rosterOrder: 5, jersey: 5, label: 'FR/SO Slot #5 (I.C.S.)', grade: 10, school: 'Tolleson Union HS', position: 'CB', foot: 'Right', weakFoot: '4★ Weak Foot', consentVerified: true, fifa: { speed: 78, strength: 87, ballControl: 77, longPass: 81, vision: 79, chemistry: 86 }, stats: { goals: 0, assists: 0, minutes: 0 }, fitness: { sprint40: 4.80, beepLevel: 12.5, stamina: 89 }, attendance: { status: 'Present', rate: 100, week: { Mon: 'P', Tue: 'P', Wed: 'P', Thu: 'P', Fri: 'P' } } },
+    { id: 'slot_6', rosterOrder: 6, jersey: 6, label: 'FR/SO Slot #6 (I.C.R.)', grade: 9, school: 'Tolleson Union HS', position: 'CDM', foot: 'Right', weakFoot: '4★ Weak Foot', consentVerified: true, fifa: { speed: 79, strength: 84, ballControl: 82, longPass: 85, vision: 84, chemistry: 87 }, stats: { goals: 0, assists: 0, minutes: 0 }, fitness: { sprint40: 4.76, beepLevel: 13.4, stamina: 93 }, attendance: { status: 'Present', rate: 100, week: { Mon: 'P', Tue: 'P', Wed: 'P', Thu: 'P', Fri: 'P' } } },
+    { id: 'slot_7', rosterOrder: 7, jersey: 7, label: 'FR/SO Slot #7 (T.C.)', grade: 9, school: 'Tolleson Union HS', position: 'LW', foot: 'Right', weakFoot: '4★ Weak Foot', consentVerified: true, fifa: { speed: 91, strength: 74, ballControl: 87, longPass: 78, vision: 83, chemistry: 86 }, stats: { goals: 0, assists: 0, minutes: 0 }, fitness: { sprint40: 4.50, beepLevel: 13.2, stamina: 91 }, attendance: { status: 'Present', rate: 100, week: { Mon: 'P', Tue: 'P', Wed: 'P', Thu: 'P', Fri: 'P' } } },
+    { id: 'slot_8', rosterOrder: 8, jersey: 8, label: 'FR/SO Slot #8 (F.E.G.)', grade: 9, school: 'Tolleson Union HS', position: 'CM', foot: 'Right', weakFoot: '4★ Weak Foot', consentVerified: true, fifa: { speed: 81, strength: 79, ballControl: 84, longPass: 86, vision: 85, chemistry: 88 }, stats: { goals: 0, assists: 0, minutes: 0 }, fitness: { sprint40: 4.72, beepLevel: 13.7, stamina: 94 }, attendance: { status: 'Present', rate: 100, week: { Mon: 'P', Tue: 'P', Wed: 'P', Thu: 'P', Fri: 'P' } } },
+    { id: 'slot_9', rosterOrder: 9, jersey: 10, label: 'FR/SO Slot #9 (K.G.)', grade: 10, school: 'University HS', position: 'CAM', foot: 'Both (5★ Weak Foot)', weakFoot: '5★ Weak Foot', consentVerified: true, fifa: { speed: 85, strength: 76, ballControl: 90, longPass: 87, vision: 91, chemistry: 89 }, stats: { goals: 0, assists: 0, minutes: 0 }, fitness: { sprint40: 4.63, beepLevel: 13.5, stamina: 92 }, attendance: { status: 'Present', rate: 100, week: { Mon: 'P', Tue: 'P', Wed: 'P', Thu: 'P', Fri: 'P' } } },
+    { id: 'slot_10', rosterOrder: 10, jersey: 11, label: 'FR/SO Slot #10 (A.G.U.)', grade: 10, school: 'University HS', position: 'RW', foot: 'Left', weakFoot: '4★ Weak Foot', consentVerified: true, fifa: { speed: 89, strength: 75, ballControl: 86, longPass: 80, vision: 83, chemistry: 86 }, stats: { goals: 0, assists: 0, minutes: 0 }, fitness: { sprint40: 4.55, beepLevel: 13.0, stamina: 90 }, attendance: { status: 'Present', rate: 100, week: { Mon: 'P', Tue: 'P', Wed: 'P', Thu: 'P', Fri: 'P' } } },
+    { id: 'slot_11', rosterOrder: 11, jersey: 12, label: 'FR/SO Slot #11 (M.L.)', grade: 10, school: 'University HS', position: 'ST', foot: 'Right', weakFoot: '4★ Weak Foot', consentVerified: true, fifa: { speed: 88, strength: 84, ballControl: 85, longPass: 76, vision: 81, chemistry: 87 }, stats: { goals: 0, assists: 0, minutes: 0 }, fitness: { sprint40: 4.56, beepLevel: 13.2, stamina: 91 }, attendance: { status: 'Present', rate: 100, week: { Mon: 'P', Tue: 'P', Wed: 'P', Thu: 'P', Fri: 'P' } } },
+    { id: 'slot_12', rosterOrder: 12, jersey: 13, label: 'FR/SO Slot #12 (E.L.)', grade: 10, school: 'Tolleson Union HS', position: 'CM', foot: 'Right', weakFoot: '4★ Weak Foot', consentVerified: true, fifa: { speed: 80, strength: 78, ballControl: 82, longPass: 83, vision: 82, chemistry: 85 }, stats: { goals: 0, assists: 0, minutes: 0 }, fitness: { sprint40: 4.75, beepLevel: 12.9, stamina: 89 }, attendance: { status: 'Present', rate: 100, week: { Mon: 'P', Tue: 'P', Wed: 'P', Thu: 'P', Fri: 'P' } } },
+    { id: 'slot_13', rosterOrder: 13, jersey: 14, label: 'FR/SO Slot #13 (J.L.P.)', grade: 9, school: 'Tolleson Union HS', position: 'GK', foot: 'Right', weakFoot: '3★ Weak Foot', consentVerified: true, fifa: { speed: 73, strength: 81, ballControl: 74, longPass: 82, vision: 80, chemistry: 85 }, stats: { goals: 0, assists: 0, minutes: 0 }, fitness: { sprint40: 4.90, beepLevel: 11.4, stamina: 88 }, attendance: { status: 'Present', rate: 100, week: { Mon: 'P', Tue: 'P', Wed: 'P', Thu: 'P', Fri: 'P' } } },
+    { id: 'slot_14', rosterOrder: 14, jersey: 15, label: 'FR/SO Slot #14 (L.N.)', grade: 9, school: 'University HS', position: 'CDM', foot: 'Right', weakFoot: '4★ Weak Foot', consentVerified: true, fifa: { speed: 80, strength: 83, ballControl: 79, longPass: 81, vision: 80, chemistry: 84 }, stats: { goals: 0, assists: 0, minutes: 0 }, fitness: { sprint40: 4.74, beepLevel: 13.0, stamina: 90 }, attendance: { status: 'Present', rate: 100, week: { Mon: 'P', Tue: 'P', Wed: 'P', Thu: 'P', Fri: 'P' } } },
+    { id: 'slot_15', rosterOrder: 15, jersey: 16, label: 'FR/SO Slot #15 (I.P.F.)', grade: 10, school: 'Tolleson Union HS', position: 'RB', foot: 'Right', weakFoot: '3★ Weak Foot', consentVerified: true, fifa: { speed: 83, strength: 77, ballControl: 78, longPass: 77, vision: 76, chemistry: 83 }, stats: { goals: 0, assists: 0, minutes: 0 }, fitness: { sprint40: 4.69, beepLevel: 12.6, stamina: 88 }, attendance: { status: 'Present', rate: 100, week: { Mon: 'P', Tue: 'P', Wed: 'P', Thu: 'P', Fri: 'P' } } },
+    { id: 'slot_16', rosterOrder: 16, jersey: 17, label: 'FR/SO Slot #16 (D.Q.)', grade: 9, school: 'Tolleson Union HS', position: 'LW', foot: 'Left', weakFoot: '4★ Weak Foot', consentVerified: true, fifa: { speed: 86, strength: 72, ballControl: 82, longPass: 75, vision: 78, chemistry: 82 }, stats: { goals: 0, assists: 0, minutes: 0 }, fitness: { sprint40: 4.62, beepLevel: 12.7, stamina: 88 }, attendance: { status: 'Present', rate: 100, week: { Mon: 'P', Tue: 'P', Wed: 'P', Thu: 'P', Fri: 'P' } } },
+    { id: 'slot_17', rosterOrder: 17, jersey: 18, label: 'FR/SO Slot #17 (M.R.)', grade: 9, school: 'Tolleson Union HS', position: 'CM', foot: 'Right', weakFoot: '4★ Weak Foot', consentVerified: true, fifa: { speed: 78, strength: 76, ballControl: 81, longPass: 82, vision: 81, chemistry: 84 }, stats: { goals: 0, assists: 0, minutes: 0 }, fitness: { sprint40: 4.79, beepLevel: 12.5, stamina: 87 }, attendance: { status: 'Present', rate: 100, week: { Mon: 'P', Tue: 'P', Wed: 'P', Thu: 'P', Fri: 'P' } } },
+    { id: 'slot_18', rosterOrder: 18, jersey: 19, label: 'FR/SO Slot #18 (G.R.C.)', grade: 9, school: 'Tolleson Union HS', position: 'CB', foot: 'Right', weakFoot: '3★ Weak Foot', consentVerified: true, fifa: { speed: 77, strength: 83, ballControl: 74, longPass: 76, vision: 75, chemistry: 82 }, stats: { goals: 0, assists: 0, minutes: 0 }, fitness: { sprint40: 4.83, beepLevel: 12.2, stamina: 86 }, attendance: { status: 'Present', rate: 100, week: { Mon: 'P', Tue: 'P', Wed: 'P', Thu: 'P', Fri: 'P' } } },
+    { id: 'slot_19', rosterOrder: 19, jersey: 20, label: 'FR/SO Slot #19 (D.R.)', grade: 9, school: 'Tolleson Union HS', position: 'CAM', foot: 'Both (5★ Weak Foot)', weakFoot: '5★ Weak Foot', consentVerified: true, fifa: { speed: 82, strength: 73, ballControl: 84, longPass: 81, vision: 83, chemistry: 84 }, stats: { goals: 0, assists: 0, minutes: 0 }, fitness: { sprint40: 4.70, beepLevel: 12.8, stamina: 89 }, attendance: { status: 'Present', rate: 100, week: { Mon: 'P', Tue: 'P', Wed: 'P', Thu: 'P', Fri: 'P' } } },
+    { id: 'slot_20', rosterOrder: 20, jersey: 22, label: 'FR/SO Slot #20 (J.V.V.)', grade: 10, school: 'Tolleson Union HS', position: 'LB', foot: 'Left', weakFoot: '3★ Weak Foot', consentVerified: true, fifa: { speed: 82, strength: 79, ballControl: 77, longPass: 78, vision: 76, chemistry: 83 }, stats: { goals: 0, assists: 0, minutes: 0 }, fitness: { sprint40: 4.71, beepLevel: 12.6, stamina: 88 }, attendance: { status: 'Present', rate: 100, week: { Mon: 'P', Tue: 'P', Wed: 'P', Thu: 'P', Fri: 'P' } } },
+    { id: 'slot_21', rosterOrder: 21, jersey: 23, label: 'FR/SO Slot #21 (A.V.)', grade: 9, school: 'Tolleson Union HS', position: 'RW', foot: 'Right', weakFoot: '4★ Weak Foot', consentVerified: true, fifa: { speed: 85, strength: 74, ballControl: 81, longPass: 76, vision: 78, chemistry: 82 }, stats: { goals: 0, assists: 0, minutes: 0 }, fitness: { sprint40: 4.65, beepLevel: 12.7, stamina: 88 }, attendance: { status: 'Present', rate: 100, week: { Mon: 'P', Tue: 'P', Wed: 'P', Thu: 'P', Fri: 'P' } } },
+    { id: 'slot_22', rosterOrder: 22, jersey: 24, label: 'FR/SO Slot #22 (J.O.V.)', grade: 10, school: 'Tolleson Union HS', position: 'ST', foot: 'Right', weakFoot: '4★ Weak Foot', consentVerified: true, fifa: { speed: 86, strength: 82, ballControl: 83, longPass: 75, vision: 79, chemistry: 85 }, stats: { goals: 0, assists: 0, minutes: 0 }, fitness: { sprint40: 4.61, beepLevel: 12.9, stamina: 90 }, attendance: { status: 'Present', rate: 100, week: { Mon: 'P', Tue: 'P', Wed: 'P', Thu: 'P', Fri: 'P' } } }
+  ];
+
+  const FORMATIONS = {
+    '4-3-3 Attack': {
+      name: '4-3-3 Attack',
+      style: 'High Wing Pace & Creative Playmaker',
+      weights: { speed: 0.24, ballControl: 0.22, vision: 0.18, longPass: 0.14, strength: 0.10, chemistry: 0.12 },
+      slots: [
+        { role: 'LW', x: 20, y: 18 }, { role: 'ST', x: 50, y: 14 }, { role: 'RW', x: 80, y: 18 },
+        { role: 'CM', x: 28, y: 43 }, { role: 'CAM', x: 50, y: 36 }, { role: 'CM', x: 72, y: 43 },
+        { role: 'LB', x: 16, y: 68 }, { role: 'CB', x: 38, y: 71 }, { role: 'CB', x: 62, y: 71 }, { role: 'RB', x: 84, y: 68 },
+        { role: 'GK', x: 50, y: 89 }
+      ]
+    },
+    '4-2-3-1 Control': {
+      name: '4-2-3-1 Control',
+      style: 'Double-Pivot Shield & High Vision Overload',
+      weights: { vision: 0.23, longPass: 0.22, ballControl: 0.20, chemistry: 0.15, speed: 0.10, strength: 0.10 },
+      slots: [
+        { role: 'ST', x: 50, y: 14 },
+        { role: 'LW', x: 20, y: 30 }, { role: 'CAM', x: 50, y: 31 }, { role: 'RW', x: 80, y: 30 },
+        { role: 'CDM', x: 35, y: 50 }, { role: 'CM', x: 65, y: 50 },
+        { role: 'LB', x: 16, y: 69 }, { role: 'CB', x: 38, y: 72 }, { role: 'CB', x: 62, y: 72 }, { role: 'RB', x: 84, y: 69 },
+        { role: 'GK', x: 50, y: 89 }
+      ]
+    },
+    '4-4-2 Classic': {
+      name: '4-4-2 Classic',
+      style: 'Two-Striker Partnership & Direct Wing Delivery',
+      weights: { strength: 0.22, speed: 0.20, chemistry: 0.20, longPass: 0.16, ballControl: 0.12, vision: 0.10 },
+      slots: [
+        { role: 'ST', x: 36, y: 16 }, { role: 'ST', x: 64, y: 16 },
+        { role: 'LW', x: 18, y: 42 }, { role: 'CM', x: 39, y: 45 }, { role: 'CM', x: 61, y: 45 }, { role: 'RW', x: 82, y: 42 },
+        { role: 'LB', x: 16, y: 69 }, { role: 'CB', x: 38, y: 72 }, { role: 'CB', x: 62, y: 72 }, { role: 'RB', x: 84, y: 69 },
+        { role: 'GK', x: 50, y: 89 }
+      ]
+    },
+    '3-5-2 Wing-Back': {
+      name: '3-5-2 Wing-Back',
+      style: '3 Center-Back Wall & Midfield Stamina Box',
+      weights: { strength: 0.22, vision: 0.18, longPass: 0.18, chemistry: 0.18, ballControl: 0.14, speed: 0.10 },
+      slots: [
+        { role: 'ST', x: 36, y: 16 }, { role: 'ST', x: 64, y: 16 },
+        { role: 'LW', x: 14, y: 39 }, { role: 'CAM', x: 50, y: 33 }, { role: 'RW', x: 86, y: 39 },
+        { role: 'CDM', x: 34, y: 50 }, { role: 'CM', x: 66, y: 50 },
+        { role: 'CB', x: 25, y: 71 }, { role: 'CB', x: 50, y: 73 }, { role: 'CB', x: 75, y: 71 },
+        { role: 'GK', x: 50, y: 89 }
+      ]
+    }
+  };
+
+  const TRAINING_EXERCISES = [
+    {
+      id: 'ex_1',
+      phase: 'Phase 1 (15 Min)',
+      category: 'Speed & Agility Warm-Up',
+      title: 'FIFA Pace Activation, SAQ Ladders & 10-Yard Reactive Sprints',
+      setup: '2 parallel agility ladders + 10-yard sprint gates; 2 lines of 11 athletes.',
+      breakdown: [
+        'Dynamic hip openers, Carioca, high knees & ankle mobility (5 min).',
+        'Two-in-each-rung fast feet into 10-yard explosive burst on whistle (5 min).',
+        '1v1 shoulder-to-shoulder reaction duel to tossed ball (5 min).'
+      ],
+      boostField: 'speed'
+    },
+    {
+      id: 'ex_2',
+      phase: 'Phase 2 (20 Min)',
+      category: 'Ball Control & Rondo',
+      title: '6v2 High-Tempo Rondo & Weak-Foot Directional First Touch',
+      setup: '12x12yd grid; max 2 touches, mandatory weak-foot pass on 3rd link.',
+      breakdown: [
+        'Scan over both shoulders before the ball travels halfway.',
+        'Receive across body on the back foot to open passing lanes.',
+        '20-pass streak forces defenders to reset.'
+      ],
+      boostField: 'ballControl'
+    },
+    {
+      id: 'ex_3',
+      phase: 'Phase 3 (20 Min)',
+      category: 'Long Pass & Switching Play',
+      title: '3-Zone Diagonal Switch & Wing-Back Overlap Combinations',
+      setup: 'Full width divided into Left Channel, Central Pivot, and Right Channel.',
+      breakdown: [
+        'Center mid hits 30-yard driven switch to weak-side winger.',
+        'Winger combines with overlapping LB/RB for cutback cross.',
+        'Emphasize low trajectory and front-foot accuracy.'
+      ],
+      boostField: 'longPass'
+    },
+    {
+      id: 'ex_4',
+      phase: 'Phase 4 (15 Min)',
+      category: 'PK, Corner & Free Kick Lab',
+      title: 'Dead-Ball Specialist Routine: PKs, Inswingers & Direct Free Kicks',
+      setup: '18-yard box; designated Captains, PK, Corner & Free Kick takers.',
+      breakdown: [
+        'Left-footed taker on Right Corner; Right-footed taker on Left Corner.',
+        'Direct Free Kicks: 22-yard wall setup with curl + layoff option.',
+        'Spot kicks vs. GK #1 and GK #14.'
+      ],
+      boostField: 'vision'
+    },
+    {
+      id: 'ex_5',
+      phase: 'Phase 5 (20 Min)',
+      category: 'Tactical Formation & Pressing',
+      title: '11v11 Best-Formation Scrimmage & High-Press Triggers',
+      setup: 'Full pitch (Starting XI vs. Tactical Press Unit).',
+      breakdown: [
+        'Captain calls line height and pressing triggers on backward passes.',
+        '6-second counter-press rule after losing possession.',
+        'Final 5 minutes: protect 1-0 lead scenario.'
+      ],
+      boostField: 'chemistry'
+    }
+  ];
+
+  const INITIAL_VIDEOS = [
+    {
+      id: 'vid_1',
+      platform: 'YouTube',
+      title: '6v2 Rondo Variations — First Touch, Scanning & Body Shape',
+      category: 'Ball Control & Rondo',
+      url: 'https://www.youtube.com/watch?v=3Gx5eN9vP2Y',
+      notes: 'Focus on receiving on the back foot and scanning before the pass arrives.'
+    },
+    {
+      id: 'vid_2',
+      platform: 'TikTok',
+      title: 'Explosive First-Step Speed & 10-Yard Acceleration Footwork',
+      category: 'Speed & Agility Warm-Up',
+      url: 'https://www.tiktok.com/',
+      notes: 'Low center of gravity on deceleration; drive elbows back on first 3 steps.'
+    },
+    {
+      id: 'vid_3',
+      platform: 'Facebook',
+      title: 'Driven 35-Yard Long Pass Technique & Switching Play',
+      category: 'Long Pass & Switching Play',
+      url: 'https://www.facebook.com/',
+      notes: 'Lock ankle, strike slightly below ball equator for flat backspin.'
+    }
+  ];
+
+  const INITIAL_TRAINING_PLAN = {
+    sessionTitle: 'High-Press Shape, Weak-Foot Rondo & Finishing',
+    locationMeta: '3:45 PM – 5:25 PM • Practice Field #1 • Red Training Kit',
+    warmupTitle: 'FIFA Speed Activation & SAQ Ladders',
+    warmupMins: 15,
+    warmupNotes: 'Dynamic hip mobility, 2-in-each-rung footwork, and 10yd reactive sprint bursts.',
+    drillsTitle: '6v2 Weak-Foot Rondo + 3-Zone Driven Long Switches',
+    drillsMins: 40,
+    drillsNotes: 'Scan before receiving on back foot; switch point of attack to overlapping wing-backs.',
+    scrimmageTitle: '11v11 Best-Formation Scrimmage & Set-Piece Live Scenario',
+    scrimmageMins: 35,
+    scrimmageNotes: '6-second counter-press rule; final 10 mins live PK, Corner & Direct Free Kick routines.',
+    dailyFocus: 'Communicate line height early, play 2-touch out of pressure, and finish rebounds.'
+  };
+
+  const INITIAL_MATCHES = [
+    { id: 'm_1', date: '2026-11-30', opponent: 'Westview HS (FR/SO)', venueType: 'Home', time: '4:00 PM', location: 'Tolleson Union Stadium • Arrive 3:00 PM' },
+    { id: 'm_2', date: '2026-12-03', opponent: 'Copper Canyon HS (FR/SO)', venueType: 'Away', time: '4:00 PM', location: 'Copper Canyon Stadium • Bus 2:30 PM' },
+    { id: 'm_3', date: '2026-12-07', opponent: 'La Joya Community HS (FR/SO)', venueType: 'Home', time: '4:00 PM', location: 'Tolleson Union Stadium • Arrive 3:00 PM' }
+  ];
+
+  return {
+    HOME_UNIFORM_NUMBERS,
+    AWAY_UNIFORM_NUMBERS,
+    ALL_VALID_UNIFORM_NUMBERS,
+    INITIAL_ROSTER,
+    FORMATIONS,
+    TRAINING_EXERCISES,
+    INITIAL_VIDEOS,
+    INITIAL_TRAINING_PLAN,
+    INITIAL_MATCHES
+  };
+})();
+
+</script>
+  <script>
+// Device-local storage manager with JSON backup/export and validated restore.
+// Explicitly warns that browser localStorage is device-local only and not a shared database.
+
+window.AppStorage = (() => {
+  const STORAGE_KEY = 'tolleson_soccer_frso_secure_v4';
+
+  function loadState(defaults) {
+    try {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      if (!raw) return defaults;
+      const parsed = JSON.parse(raw);
+      if (!parsed || !Array.isArray(parsed.roster) || parsed.roster.length === 0) {
+        return defaults;
+      }
+      return {
+        ...defaults,
+        roster: parsed.roster,
+        specialists: parsed.specialists || defaults.specialists,
+        videos: Array.isArray(parsed.videos) ? parsed.videos : defaults.videos,
+        trainingPlan: parsed.trainingPlan || defaults.trainingPlan,
+        matches: Array.isArray(parsed.matches) ? parsed.matches : defaults.matches
+      };
+    } catch (e) {
+      return defaults;
+    }
+  }
+
+  function saveState(state) {
+    try {
+      const payload = {
+        version: 4,
+        savedAt: new Date().toISOString(),
+        roster: state.roster,
+        specialists: state.specialists,
+        videos: state.videos,
+        trainingPlan: state.trainingPlan,
+        matches: state.matches
+      };
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(payload));
+      return true;
+    } catch (e) {
+      return false;
+    }
+  }
+
+  function exportBackupJson(state) {
+    const payload = {
+      app: 'Tolleson Union Soccer FR/SO Hub',
+      version: 4,
+      exportedAt: new Date().toISOString(),
+      roster: state.roster,
+      specialists: state.specialists,
+      videos: state.videos,
+      trainingPlan: state.trainingPlan,
+      matches: state.matches
+    };
+    const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `tolleson_soccer_backup_${new Date().toISOString().slice(0, 10)}.json`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  }
+
+  function validateImportedBackup(parsed) {
+    if (!parsed || typeof parsed !== 'object') {
+      return { valid: false, error: 'Backup file is not a valid JSON object.' };
+    }
+    if (!Array.isArray(parsed.roster) || parsed.roster.length === 0) {
+      return { valid: false, error: 'Backup JSON must contain a non-empty "roster" array.' };
+    }
+    for (const p of parsed.roster) {
+      if (!p.id || !p.label || !p.fifa) {
+        return { valid: false, error: 'One or more roster entries are missing required fields (id, label, fifa).' };
+      }
+    }
+    return { valid: true, data: parsed };
+  }
+
+  return {
+    loadState,
+    saveState,
+    exportBackupJson,
+    validateImportedBackup
+  };
+})();
+
+</script>
+  <script>
+// Roster, EA Sports FIFA Rating Engine, and Zero-Dependency SVG Radar Chart
+
+window.RosterFeature = (() => {
+  const { el, clearEl } = window.AppValidation;
+
+  function getPositionGroup(pos) {
+    if (['ST', 'LW', 'RW'].includes(pos)) return 'FWD';
+    if (['CAM', 'CM', 'CDM'].includes(pos)) return 'MID';
+    if (['LB', 'CB', 'RB'].includes(pos)) return 'DEF';
+    return 'GK';
+  }
+
+  function calculateFifaOvr(player) {
+    const f = player.fifa;
+    const pos = player.position;
+    let raw = 75;
+    if (pos === 'ST' || pos === 'LW' || pos === 'RW') {
+      raw = f.speed * 0.26 + f.ballControl * 0.25 + f.vision * 0.16 + f.strength * 0.15 + f.longPass * 0.08 + f.chemistry * 0.10;
+    } else if (pos === 'CAM' || pos === 'CM') {
+      raw = f.vision * 0.24 + f.ballControl * 0.23 + f.longPass * 0.22 + f.chemistry * 0.12 + f.speed * 0.11 + f.strength * 0.08;
+    } else if (pos === 'CDM') {
+      raw = f.strength * 0.24 + f.longPass * 0.22 + f.vision * 0.20 + f.ballControl * 0.14 + f.chemistry * 0.12 + f.speed * 0.08;
+    } else if (pos === 'LB' || pos === 'RB') {
+      raw = f.speed * 0.26 + f.strength * 0.20 + f.longPass * 0.18 + f.ballControl * 0.14 + f.vision * 0.10 + f.chemistry * 0.12;
+    } else if (pos === 'CB') {
+      raw = f.strength * 0.34 + f.speed * 0.18 + f.longPass * 0.16 + f.vision * 0.12 + f.ballControl * 0.08 + f.chemistry * 0.12;
+    } else {
+      raw = f.strength * 0.26 + f.longPass * 0.24 + f.vision * 0.22 + f.chemistry * 0.16 + f.ballControl * 0.06 + f.speed * 0.06;
+    }
+    return Math.min(99, Math.max(40, Math.round(raw)));
+  }
+
+  function getFutTier(ovr) {
+    if (ovr >= 86) return { cls: 'fut-tier-totw', label: 'TOTW Special' };
+    if (ovr >= 75) return { cls: 'fut-tier-gold', label: 'FUT Gold' };
+    if (ovr >= 65) return { cls: 'fut-tier-silver', label: 'FUT Silver' };
+    return { cls: 'fut-tier-bronze', label: 'FUT Bronze' };
+  }
+
+  function getKitStatus(num) {
+    const n = Number(num);
+    const inH = window.AppData.HOME_UNIFORM_NUMBERS.includes(n);
+    const inA = window.AppData.AWAY_UNIFORM_NUMBERS.includes(n);
+    if (n === 1 || n === 14) return `GK #${n}: Available in both Home & Away GK kits`;
+    if (inH && inA) return `#${n}: Available in both Home & Away uniform sets`;
+    if (inH) return `#${n}: Home uniform set ONLY`;
+    if (inA) return `#${n}: Away uniform set ONLY`;
+    return `#${n}: Outside standard FR/SO uniform sheet list`;
+  }
+
+  function renderSvgRadarChart(container, player, roster) {
+    if (!container || !player) return;
+    clearEl(container);
+
+    const count = Math.max(1, roster.length);
+    const avg = {
+      speed: roster.reduce((s, p) => s + p.fifa.speed, 0) / count,
+      strength: roster.reduce((s, p) => s + p.fifa.strength, 0) / count,
+      ballControl: roster.reduce((s, p) => s + p.fifa.ballControl, 0) / count,
+      longPass: roster.reduce((s, p) => s + p.fifa.longPass, 0) / count,
+      vision: roster.reduce((s, p) => s + p.fifa.vision, 0) / count,
+      chemistry: roster.reduce((s, p) => s + p.fifa.chemistry, 0) / count
+    };
+
+    const labels = ['SPD', 'STR', 'CTL', 'PAS', 'VIS', 'CHM'];
+    const pVals = [player.fifa.speed, player.fifa.strength, player.fifa.ballControl, player.fifa.longPass, player.fifa.vision, player.fifa.chemistry];
+    const aVals = [avg.speed, avg.strength, avg.ballControl, avg.longPass, avg.vision, avg.chemistry];
+
+    const svgNS = 'http://www.w3.org/2000/svg';
+    const svg = document.createElementNS(svgNS, 'svg');
+    svg.setAttribute('viewBox', '0 0 260 220');
+    svg.setAttribute('role', 'img');
+    svg.setAttribute('aria-label', `6-attribute FIFA radar chart for ${player.label}`);
+    svg.style.width = '100%';
+    svg.style.height = '200px';
+
+    const cx = 130;
+    const cy = 110;
+    const maxR = 76;
+
+    const pt = (idx, val) => {
+      const angle = (Math.PI * 2 * idx) / 6 - Math.PI / 2;
+      const ratio = Math.max(0.1, Math.min(1, (val - 30) / 70));
+      return [cx + Math.cos(angle) * maxR * ratio, cy + Math.sin(angle) * maxR * ratio];
+    };
+
+    // Grid rings
+    [50, 75, 100].forEach(ringVal => {
+      const poly = document.createElementNS(svgNS, 'polygon');
+      const pts = labels.map((_, i) => pt(i, ringVal).map(v => v.toFixed(1)).join(',')).join(' ');
+      poly.setAttribute('points', pts);
+      poly.setAttribute('fill', 'none');
+      poly.setAttribute('stroke', '#334155');
+      poly.setAttribute('stroke-width', '1');
+      svg.appendChild(poly);
+    });
+
+    // Axis lines + Labels
+    labels.forEach((lbl, i) => {
+      const [x2, y2] = pt(i, 100);
+      const line = document.createElementNS(svgNS, 'line');
+      line.setAttribute('x1', cx);
+      line.setAttribute('y1', cy);
+      line.setAttribute('x2', x2.toFixed(1));
+      line.setAttribute('y2', y2.toFixed(1));
+      line.setAttribute('stroke', '#334155');
+      line.setAttribute('stroke-width', '1');
+      svg.appendChild(line);
+
+      const angle = (Math.PI * 2 * i) / 6 - Math.PI / 2;
+      const lx = cx + Math.cos(angle) * (maxR + 18);
+      const ly = cy + Math.sin(angle) * (maxR + 14) + 4;
+      const text = document.createElementNS(svgNS, 'text');
+      text.setAttribute('x', lx.toFixed(1));
+      text.setAttribute('y', ly.toFixed(1));
+      text.setAttribute('text-anchor', 'middle');
+      text.setAttribute('fill', '#cbd5e1');
+      text.setAttribute('font-size', '10');
+      text.setAttribute('font-weight', '700');
+      text.textContent = `${lbl} ${pVals[i]}`;
+      svg.appendChild(text);
+    });
+
+    // Team Average Polygon
+    const avgPoly = document.createElementNS(svgNS, 'polygon');
+    avgPoly.setAttribute('points', aVals.map((v, i) => pt(i, v).map(c => c.toFixed(1)).join(',')).join(' '));
+    avgPoly.setAttribute('fill', 'rgba(148, 163, 184, 0.14)');
+    avgPoly.setAttribute('stroke', '#94a3b8');
+    avgPoly.setAttribute('stroke-dasharray', '3 3');
+    avgPoly.setAttribute('stroke-width', '1.5');
+    svg.appendChild(avgPoly);
+
+    // Player Polygon
+    const pPoly = document.createElementNS(svgNS, 'polygon');
+    pPoly.setAttribute('points', pVals.map((v, i) => pt(i, v).map(c => c.toFixed(1)).join(',')).join(' '));
+    pPoly.setAttribute('fill', 'rgba(16, 185, 129, 0.30)');
+    pPoly.setAttribute('stroke', '#34d399');
+    pPoly.setAttribute('stroke-width', '2');
+    svg.appendChild(pPoly);
+
+    container.appendChild(svg);
+  }
+
+  function renderRosterGrid(state, onSelectPlayer) {
+    const grid = document.getElementById('futCardGrid');
+    if (!grid) return;
+    clearEl(grid);
+
+    const query = (document.getElementById('searchRosterInput')?.value || '').trim().toLowerCase();
+    const schoolFilter = document.getElementById('filterSchoolSelect')?.value || 'ALL';
+    const posFilter = document.getElementById('filterPositionSelect')?.value || 'ALL';
+    const sortBy = document.getElementById('sortRosterSelect')?.value || 'roster_asc';
+
+    const filtered = state.roster.filter(p => {
+      const matchesQ = !query || p.label.toLowerCase().includes(query) || String(p.jersey).includes(query) || p.position.toLowerCase().includes(query) || p.foot.toLowerCase().includes(query);
+      const matchesSchool = schoolFilter === 'ALL' || p.school === schoolFilter;
+      const matchesPos = posFilter === 'ALL' || getPositionGroup(p.position) === posFilter;
+      return matchesQ && matchesSchool && matchesPos;
+    });
+
+    filtered.sort((a, b) => {
+      if (sortBy === 'roster_asc') return (a.rosterOrder || 99) - (b.rosterOrder || 99);
+      if (sortBy === 'ovr_desc') return calculateFifaOvr(b) - calculateFifaOvr(a);
+      if (sortBy === 'jersey_asc') return (a.jersey || 99) - (b.jersey || 99);
+      if (sortBy === 'speed_desc') return b.fifa.speed - a.fifa.speed;
+      return 0;
+    });
+
+    if (filtered.length === 0) {
+      grid.appendChild(el('div', { className: 'subpanel', textContent: 'No roster slots match your current search or filters.' }));
+      return;
+    }
+
+    filtered.forEach(p => {
+      const ovr = calculateFifaOvr(p);
+      const tier = getFutTier(ovr);
+      const isSelected = p.id === state.selectedPlayerId;
+      const specBadges = window.FormationFeature.getSpecialistBadges(state, p.id);
+
+      const cardBtn = el('button', {
+        type: 'button',
+        className: `fut-card ${tier.cls}${isSelected ? ' selected' : ''}`,
+        'aria-pressed': isSelected ? 'true' : 'false'
+      });
+      cardBtn.addEventListener('click', () => onSelectPlayer(p.id));
+
+      const topRow = el('div', { className: 'fut-top' }, [
+        el('div', {}, [
+          el('div', { className: 'fut-ovr', textContent: ovr }),
+          el('div', { className: 'fut-pos', textContent: p.position }),
+          el('div', { className: 'fut-meta', textContent: `#${p.jersey} • Gr.${p.grade}` })
+        ]),
+        el('div', { className: 'fut-crest' }, [
+          el('span', { textContent: `#${p.jersey}` }),
+          el('span', { style: 'font-size:0.62rem;', textContent: p.school === 'University HS' ? 'UHS' : 'TUHS' })
+        ]),
+        el('div', { style: 'display:flex; flex-direction:column; align-items:flex-end; gap:3px;' }, [
+          el('span', { className: 'badge badge-emerald', textContent: p.consentVerified ? 'Consent OK' : 'Pending' }),
+          el('div', { style: 'display:flex; gap:2px; flex-wrap:wrap; justify-content:flex-end;' },
+            specBadges.map(b => el('span', { className: 'badge badge-amber', textContent: b.code, title: b.label }))
+          )
+        ])
+      ]);
+
+      const nameBar = el('div', { className: 'fut-name-bar' }, [
+        el('div', { className: 'fut-name', textContent: p.label }),
+        el('div', { className: 'fut-meta', textContent: `Preferred Foot: ${p.foot} • ${p.school}` })
+      ]);
+
+      const attrs = el('div', { className: 'fut-attrs' }, [
+        el('div', { className: 'fut-attr-row' }, [el('span', { textContent: p.fifa.speed }), el('span', { textContent: 'SPD' })]),
+        el('div', { className: 'fut-attr-row' }, [el('span', { textContent: p.fifa.longPass }), el('span', { textContent: 'PAS' })]),
+        el('div', { className: 'fut-attr-row' }, [el('span', { textContent: p.fifa.strength }), el('span', { textContent: 'STR' })]),
+        el('div', { className: 'fut-attr-row' }, [el('span', { textContent: p.fifa.vision }), el('span', { textContent: 'VIS' })]),
+        el('div', { className: 'fut-attr-row' }, [el('span', { textContent: p.fifa.ballControl }), el('span', { textContent: 'CTL' })]),
+        el('div', { className: 'fut-attr-row' }, [el('span', { textContent: p.fifa.chemistry }), el('span', { textContent: 'CHM' })])
+      ]);
+
+      const footBar = el('div', { className: 'fut-foot' }, [
+        el('span', { textContent: `${p.stats.goals}G • ${p.stats.assists}A` }),
+        el('span', { textContent: `Wk Att: ${p.attendance.rate}%` })
+      ]);
+
+      cardBtn.appendChild(topRow);
+      cardBtn.appendChild(nameBar);
+      cardBtn.appendChild(attrs);
+      cardBtn.appendChild(footBar);
+      grid.appendChild(cardBtn);
+    });
+  }
+
+  function renderInspector(state) {
+    const player = state.roster.find(p => p.id === state.selectedPlayerId) || state.roster[0];
+    if (!player) return;
+    state.selectedPlayerId = player.id;
+
+    const ovr = calculateFifaOvr(player);
+    const tier = getFutTier(ovr);
+
+    const setText = (id, v) => { const n = document.getElementById(id); if (n) n.textContent = v; };
+    const setVal = (id, v) => { const n = document.getElementById(id); if (n) n.value = v; };
+
+    setText('inspectorPlayerName', player.label);
+    setText('inspectorPlayerMeta', `Uniform #${player.jersey} • ${player.position} • ${player.foot} Foot • Grade ${player.grade}`);
+    setText('inspectorOvrBadge', ovr);
+    setText('inspectorTierLabel', tier.label);
+    setText('jerseyKitCompatibility', getKitStatus(player.jersey));
+
+    setVal('editJerseyInput', player.jersey);
+    setVal('editNameInput', player.label);
+    setVal('editPositionInput', player.position);
+    setVal('editFootInput', player.foot);
+
+    const sliders = [
+      ['sliderSpeed', 'valSpeed', player.fifa.speed],
+      ['sliderStrength', 'valStrength', player.fifa.strength],
+      ['sliderBallControl', 'valBallControl', player.fifa.ballControl],
+      ['sliderLongPass', 'valLongPass', player.fifa.longPass],
+      ['sliderVision', 'valVision', player.fifa.vision],
+      ['sliderChemistry', 'valChemistry', player.fifa.chemistry]
+    ];
+    sliders.forEach(([sid, vid, val]) => {
+      setVal(sid, val);
+      setText(vid, val);
+    });
+
+    const radarBox = document.getElementById('fifaRadarContainer');
+    renderSvgRadarChart(radarBox, player, state.roster);
+  }
+
+  return {
+    getPositionGroup,
+    calculateFifaOvr,
+    renderRosterGrid,
+    renderInspector
+  };
+})();
+
+</script>
+  <script>
+// Formation Optimizer, SVG Pitch Visualizer, Captains & Set-Piece Takers
+
+window.FormationFeature = (() => {
+  const { el, clearEl } = window.AppValidation;
+
+  function getSpecialistBadges(state, playerId) {
+    const s = state.specialists;
+    const badges = [];
+    if (s.captain1 === playerId) badges.push({ code: 'C', label: 'Team Captain' });
+    if (s.captain2 === playerId) badges.push({ code: 'VC', label: 'Vice-Captain' });
+    if (s.pkTaker === playerId) badges.push({ code: 'PK', label: 'Penalty Taker' });
+    if (s.fkTaker === playerId) badges.push({ code: 'FK', label: 'Free Kick Taker' });
+    if (s.cornerLeft === playerId) badges.push({ code: 'CL', label: 'Left Corner Taker' });
+    if (s.cornerRight === playerId) badges.push({ code: 'CR', label: 'Right Corner Taker' });
+    return badges;
+  }
+
+  function evaluateFormations(state) {
+    const { getPositionGroup, calculateFifaOvr } = window.RosterFeature;
+    const pool = state.availableOnlyOnPitch
+      ? state.roster.filter(p => p.attendance.status === 'Present' || p.attendance.status === 'Late')
+      : state.roster.slice();
+
+    const results = [];
+    Object.keys(window.AppData.FORMATIONS).forEach(key => {
+      const form = window.AppData.FORMATIONS[key];
+      const used = new Set();
+      const assignedSlots = [];
+      let totalScore = 0;
+
+      form.slots.forEach(slot => {
+        let best = null;
+        let bestScore = -1;
+        pool.forEach(p => {
+          if (used.has(p.id)) return;
+          const ovr = calculateFifaOvr(p);
+          let mult = 0.78;
+          if (p.position === slot.role) mult = 1.0;
+          else if (getPositionGroup(p.position) === getPositionGroup(slot.role)) mult = 0.92;
+
+          const weighted =
+            p.fifa.speed * form.weights.speed +
+            p.fifa.strength * form.weights.strength +
+            p.fifa.ballControl * form.weights.ballControl +
+            p.fifa.longPass * form.weights.longPass +
+            p.fifa.vision * form.weights.vision +
+            p.fifa.chemistry * form.weights.chemistry;
+
+          const fitFactor = 0.85 + (p.fitness.stamina / 100) * 0.15;
+          const score = (ovr * 0.55 + weighted * 0.45) * mult * fitFactor;
+          if (score > bestScore) {
+            bestScore = score;
+            best = p;
+          }
+        });
+
+        if (best) {
+          used.add(best.id);
+          assignedSlots.push({ ...slot, player: best, ovr: calculateFifaOvr(best) });
+          totalScore += bestScore;
+        } else {
+          assignedSlots.push({ ...slot, player: null, ovr: 0 });
+        }
+      });
+
+      const filled = assignedSlots.filter(s => s.player).length;
+      const avgOvr = filled ? Math.round(assignedSlots.reduce((a, s) => a + s.ovr, 0) / filled) : 0;
+      const avgChem = filled ? Math.round(assignedSlots.reduce((a, s) => a + (s.player ? s.player.fifa.chemistry : 0), 0) / filled) : 0;
+      const exact = assignedSlots.filter(s => s.player && s.player.position === s.role).length;
+      const fitScore = filled ? Math.min(99, Math.round((totalScore / 11) + exact * 1.1)) : 0;
+
+      results.push({
+        key,
+        name: form.name,
+        style: form.style,
+        fitScore,
+        avgOvr,
+        avgChem,
+        exact,
+        assignedSlots,
+        bench: pool.filter(p => !used.has(p.id))
+      });
+    });
+
+    results.sort((a, b) => b.fitScore - a.fitScore);
+    return results;
+  }
+
+  function renderSpecialists(state) {
+    const { calculateFifaOvr } = window.RosterFeature;
+    const roles = [
+      { selectId: 'selectCaptain1', metaId: 'metaCaptain1', key: 'captain1', fn: p => `Chem ${p.fifa.chemistry} • Vis ${p.fifa.vision}` },
+      { selectId: 'selectCaptain2', metaId: 'metaCaptain2', key: 'captain2', fn: p => `Chem ${p.fifa.chemistry} • Str ${p.fifa.strength}` },
+      { selectId: 'selectPkTaker', metaId: 'metaPkTaker', key: 'pkTaker', fn: p => `CTL ${p.fifa.ballControl} • ${p.foot} Ft` },
+      { selectId: 'selectFkTaker', metaId: 'metaFkTaker', key: 'fkTaker', fn: p => `PAS ${p.fifa.longPass} • ${p.foot} Ft` },
+      { selectId: 'selectCornerLeft', metaId: 'metaCornerLeft', key: 'cornerLeft', fn: p => `PAS ${p.fifa.longPass} • ${p.foot} Ft` },
+      { selectId: 'selectCornerRight', metaId: 'metaCornerRight', key: 'cornerRight', fn: p => `PAS ${p.fifa.longPass} • ${p.foot} Ft` }
+    ];
+
+    roles.forEach(r => {
+      const sel = document.getElementById(r.selectId);
+      const meta = document.getElementById(r.metaId);
+      if (!sel) return;
+      clearEl(sel);
+      const current = state.specialists[r.key] || state.roster[0]?.id;
+      state.roster.forEach(p => {
+        const opt = el('option', {
+          value: p.id,
+          selected: p.id === current,
+          textContent: `#${p.jersey} ${p.label} (${p.position} • ${calculateFifaOvr(p)})`
+        });
+        sel.appendChild(opt);
+      });
+      const chosen = state.roster.find(p => p.id === sel.value) || state.roster[0];
+      if (chosen && meta) meta.textContent = r.fn(chosen);
+    });
+  }
+
+  function renderFormationTab(state, onInspectPlayer) {
+    renderSpecialists(state);
+    const rankings = evaluateFormations(state);
+    const listEl = document.getElementById('formationRankingList');
+    if (!listEl) return rankings;
+
+    clearEl(listEl);
+    const active = rankings.find(r => r.key === state.selectedFormation) || rankings[0];
+    state.selectedFormation = active.key;
+
+    rankings.forEach((r, idx) => {
+      const isSelected = r.key === state.selectedFormation;
+      const btn = el('button', {
+        type: 'button',
+        className: `subpanel`,
+        style: `width:100%; text-align:left; display:flex; justify-content:space-between; align-items:center; cursor:pointer; border-color:${isSelected ? '#10b981' : '#1e293b'};`
+      }, [
+        el('div', {}, [
+          el('div', { style: 'font-weight:700; color:#f8fafc; font-size:0.84rem;' }, [
+            r.name,
+            idx === 0 ? el('span', { className: 'badge badge-emerald', style: 'margin-left:8px;', textContent: '#1 Best Fit' }) : null
+          ]),
+          el('div', { style: 'font-size:0.72rem; color:#cbd5e1;', textContent: r.style })
+        ]),
+        el('div', { style: 'text-align:right;' }, [
+          el('div', { style: 'font-weight:800; color:#34d399; font-size:0.95rem;', textContent: `${r.fitScore}% Fit` }),
+          el('div', { style: 'font-size:0.68rem; color:#cbd5e1;', textContent: `XI OVR ${r.avgOvr} • Chem ${r.avgChem}` })
+        ])
+      ]);
+      btn.addEventListener('click', () => {
+        state.selectedFormation = r.key;
+        renderFormationTab(state, onInspectPlayer);
+      });
+      listEl.appendChild(btn);
+    });
+
+    const titleEl = document.getElementById('pitchHeaderTitle');
+    if (titleEl) titleEl.textContent = `Starting XI Pitch Map — ${active.name}`;
+    const ovrEl = document.getElementById('pitchStartingOvr');
+    if (ovrEl) ovrEl.textContent = active.avgOvr;
+    const chemEl = document.getElementById('pitchStartingChem');
+    if (chemEl) chemEl.textContent = `${active.avgChem}/99`;
+
+    const nodesEl = document.getElementById('pitchNodesContainer');
+    if (nodesEl) {
+      clearEl(nodesEl);
+      active.assignedSlots.forEach(s => {
+        if (!s.player) return;
+        const badges = getSpecialistBadges(state, s.player.id);
+        const footShort = s.player.foot.startsWith('Left') ? 'L' : s.player.foot.startsWith('Both') ? '5★' : 'R';
+        const nodeBtn = el('button', {
+          type: 'button',
+          className: 'pitch-node',
+          style: `left:${s.x}%; top:${s.y}%;`
+        }, [
+          el('div', { className: 'pitch-circle' }, [
+            el('span', { style: 'font-size:0.64rem; color:#fbbf24;', textContent: s.ovr }),
+            el('span', { textContent: `#${s.player.jersey}` }),
+            el('span', { className: 'pitch-role-tag', textContent: s.role })
+          ]),
+          el('div', { className: 'pitch-label', textContent: `${s.player.label} (${footShort})${badges.length ? ' [' + badges[0].code + ']' : ''}` })
+        ]);
+        nodeBtn.addEventListener('click', () => onInspectPlayer(s.player.id));
+        nodesEl.appendChild(nodeBtn);
+      });
+    }
+
+    const benchEl = document.getElementById('pitchBenchContainer');
+    if (benchEl) {
+      clearEl(benchEl);
+      if (active.bench.length === 0) {
+        benchEl.appendChild(el('span', { style: 'font-size:0.74rem; color:#cbd5e1;', textContent: 'All available players are in the Starting XI.' }));
+      } else {
+        active.bench.forEach(p => {
+          const chip = el('button', {
+            type: 'button',
+            className: 'btn btn-secondary btn-sm',
+            textContent: `#${p.jersey} ${p.label} (${p.position} • ${p.foot.split(' ')[0]} Ft)`
+          });
+          chip.addEventListener('click', () => onInspectPlayer(p.id));
+          benchEl.appendChild(chip);
+        });
+      }
+    }
+
+    return rankings;
+  }
+
+  return {
+    getSpecialistBadges,
+    evaluateFormations,
+    renderFormationTab
+  };
+})();
+
+</script>
+  <script>
+// Weekly Mon-Fri Practice Attendance, Preferred Foot, and Match Stats & Fitness Combine
+
+window.AttendanceStatsFeature = (() => {
+  const { el, clearEl, clampInt, clampFloat } = window.AppValidation;
+
+  function recomputeWeeklyRate(player) {
+    if (!player.attendance.week) {
+      player.attendance.week = { Mon: 'P', Tue: 'P', Wed: 'P', Thu: 'P', Fri: 'P' };
+    }
+    const days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'];
+    let pts = 0;
+    days.forEach(d => {
+      const code = player.attendance.week[d] || 'P';
+      if (code === 'P') pts += 1;
+      else if (code === 'L' || code === 'E') pts += 0.75;
+    });
+    player.attendance.rate = Math.round((pts / 5) * 100);
+  }
+
+  function renderStatsAndFitness(state, onSave, onInspectPlayer) {
+    const tbody = document.getElementById('statsFitnessTableBody');
+    if (!tbody) return;
+    clearEl(tbody);
+
+    const { calculateFifaOvr } = window.RosterFeature;
+
+    state.roster.forEach(p => {
+      const ovr = calculateFifaOvr(p);
+
+      const goalsDec = el('button', { type: 'button', className: 'btn btn-secondary btn-sm', textContent: '-', 'aria-label': `Decrease goals for ${p.label}` });
+      goalsDec.addEventListener('click', () => { if (p.stats.goals > 0) { p.stats.goals -= 1; onSave(); } });
+      const goalsInc = el('button', { type: 'button', className: 'btn btn-primary btn-sm', textContent: '+', 'aria-label': `Increase goals for ${p.label}` });
+      goalsInc.addEventListener('click', () => { p.stats.goals += 1; onSave(); });
+
+      const astDec = el('button', { type: 'button', className: 'btn btn-secondary btn-sm', textContent: '-', 'aria-label': `Decrease assists for ${p.label}` });
+      astDec.addEventListener('click', () => { if (p.stats.assists > 0) { p.stats.assists -= 1; onSave(); } });
+      const astInc = el('button', { type: 'button', className: 'btn btn-primary btn-sm', textContent: '+', 'aria-label': `Increase assists for ${p.label}` });
+      astInc.addEventListener('click', () => { p.stats.assists += 1; onSave(); });
+
+      const sprintInput = el('input', {
+        type: 'number', step: '0.01', min: '4.0', max: '7.0',
+        value: p.fitness.sprint40, className: 'input', style: 'width:70px; text-align:center;',
+        'aria-label': `40 yard sprint seconds for ${p.label}`
+      });
+      sprintInput.addEventListener('change', () => {
+        p.fitness.sprint40 = clampFloat(sprintInput.value, 4.0, 7.0, p.fitness.sprint40);
+        onSave();
+      });
+
+      const beepInput = el('input', {
+        type: 'number', step: '0.1', min: '4.0', max: '18.0',
+        value: p.fitness.beepLevel, className: 'input', style: 'width:68px; text-align:center;',
+        'aria-label': `Beep test level for ${p.label}`
+      });
+      beepInput.addEventListener('change', () => {
+        p.fitness.beepLevel = clampFloat(beepInput.value, 4.0, 18.0, p.fitness.beepLevel);
+        onSave();
+      });
+
+      const stamInput = el('input', {
+        type: 'number', min: '40', max: '100',
+        value: p.fitness.stamina, className: 'input', style: 'width:62px; text-align:center;',
+        'aria-label': `Stamina percentage for ${p.label}`
+      });
+      stamInput.addEventListener('change', () => {
+        p.fitness.stamina = clampInt(stamInput.value, 40, 100, p.fitness.stamina);
+        onSave();
+      });
+
+      const cardBtn = el('button', { type: 'button', className: 'btn btn-secondary btn-sm', textContent: 'FIFA Card' });
+      cardBtn.addEventListener('click', () => onInspectPlayer(p.id));
+
+      const tr = el('tr', {}, [
+        el('td', {}, [
+          el('div', { style: 'font-weight:700;', textContent: `#${p.jersey} ${p.label}` }),
+          el('div', { style: 'font-size:0.68rem; color:#cbd5e1;', textContent: `SPD ${p.fifa.speed} • STR ${p.fifa.strength}` })
+        ]),
+        el('td', {}, [
+          el('div', { textContent: `Gr.${p.grade} • ${p.foot}` }),
+          el('div', { style: 'font-size:0.68rem; color:#94a3b8;', textContent: p.school })
+        ]),
+        el('td', { style: 'font-weight:700; color:#34d399;', textContent: p.position }),
+        el('td', { style: 'font-weight:800; color:#fbbf24;', textContent: ovr }),
+        el('td', {}, [el('div', { style: 'display:flex; align-items:center; gap:5px;' }, [goalsDec, el('span', { style: 'min-width:16px; text-align:center; font-weight:700;', textContent: p.stats.goals }), goalsInc])]),
+        el('td', {}, [el('div', { style: 'display:flex; align-items:center; gap:5px;' }, [astDec, el('span', { style: 'min-width:16px; text-align:center; font-weight:700;', textContent: p.stats.assists }), astInc])]),
+        el('td', {}, sprintInput),
+        el('td', {}, beepInput),
+        el('td', {}, stamInput),
+        el('td', {}, cardBtn)
+      ]);
+      tbody.appendChild(tr);
+    });
+  }
+
+  function renderAttendanceAndFoot(state, onSave) {
+    const tbody = document.getElementById('attendanceFootTableBody');
+    if (!tbody) return;
+    clearEl(tbody);
+
+    const days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'];
+    const order = ['P', 'L', 'E', 'A'];
+    const pillBadge = { P: 'badge-emerald', L: 'badge-amber', E: 'badge-sky', A: 'badge-rose' };
+    const footChoices = ['Right', 'Left', 'Both (5★ Weak Foot)'];
+
+    state.roster.forEach(p => {
+      recomputeWeeklyRate(p);
+
+      const statusSel = el('select', { className: 'select', style: 'width:105px;', 'aria-label': `Today status for ${p.label}` },
+        ['Present', 'Late', 'Excused', 'Absent'].map(st => el('option', { value: st, selected: p.attendance.status === st, textContent: st }))
+      );
+      statusSel.addEventListener('change', () => {
+        p.attendance.status = statusSel.value;
+        onSave();
+      });
+
+      const dayCells = days.map(d => {
+        const code = p.attendance.week[d] || 'P';
+        const btn = el('button', {
+          type: 'button',
+          className: `badge ${pillBadge[code] || 'badge-emerald'}`,
+          style: 'cursor:pointer; min-width:28px; justify-content:center;',
+          textContent: code,
+          'aria-label': `${p.label} ${d} practice status: ${code}. Click to change.`
+        });
+        btn.addEventListener('click', () => {
+          const curr = p.attendance.week[d] || 'P';
+          p.attendance.week[d] = order[(order.indexOf(curr) + 1) % order.length];
+          recomputeWeeklyRate(p);
+          onSave();
+        });
+        return el('td', { style: 'text-align:center;' }, btn);
+      });
+
+      const footSel = el('select', { className: 'select', style: 'width:160px;', 'aria-label': `Preferred foot for ${p.label}` },
+        footChoices.map(fc => el('option', { value: fc, selected: p.foot === fc, textContent: fc }))
+      );
+      footSel.addEventListener('change', () => {
+        p.foot = footSel.value;
+        onSave();
+      });
+
+      const tr = el('tr', {}, [
+        el('td', {}, [
+          el('div', { style: 'font-weight:700;', textContent: `#${p.jersey} ${p.label}` }),
+          el('div', { style: 'font-size:0.68rem; color:#cbd5e1;', textContent: `Gr.${p.grade} • ${p.position}` })
+        ]),
+        el('td', {}, statusSel),
+        ...dayCells,
+        el('td', { style: 'font-weight:700; color:#34d399; text-align:center;', textContent: `${p.attendance.rate}%` }),
+        el('td', {}, footSel)
+      ]);
+      tbody.appendChild(tr);
+    });
+
+    // Preferred Foot Breakdown
+    const tallyEl = document.getElementById('footTallyContainer');
+    if (tallyEl) {
+      clearEl(tallyEl);
+      const counts = { Right: 0, Left: 0, 'Both (5★ Weak Foot)': 0 };
+      state.roster.forEach(p => { counts[p.foot] = (counts[p.foot] || 0) + 1; });
+
+      Object.entries(counts).forEach(([label, cnt]) => {
+        const pct = Math.round((cnt / Math.max(1, state.roster.length)) * 100);
+        const box = el('div', { className: 'subpanel', style: 'display:flex; flex-direction:column; gap:6px;' }, [
+          el('div', { style: 'display:flex; justify-content:space-between; font-size:0.78rem; font-weight:700;' }, [
+            el('span', { textContent: `${label} Foot` }),
+            el('span', { style: 'color:#34d399;', textContent: `${cnt} athletes (${pct}%)` })
+          ]),
+          el('div', { style: 'height:6px; background:#1e293b; border-radius:999px; overflow:hidden;' },
+            el('div', { style: `height:100%; width:${pct}%; background:#10b981;` })
+          )
+        ]);
+        tallyEl.appendChild(box);
+      });
+    }
+  }
+
+  return {
+    recomputeWeeklyRate,
+    renderStatsAndFitness,
+    renderAttendanceAndFoot
+  };
+})();
+
+</script>
+  <script>
+// Home Training Screen Breakdown & Next Matches Manager
+
+window.MatchesTrainingFeature = (() => {
+  const { el, clearEl } = window.AppValidation;
+
+  function renderHomeAndMatches(state, onDeleteMatch) {
+    const tp = state.trainingPlan;
+    const setTxt = (id, v) => { const n = document.getElementById(id); if (n) n.textContent = v; };
+
+    if (tp) {
+      setTxt('homeTrainingSessionTitle', tp.sessionTitle);
+      setTxt('homeTrainingLocationMeta', tp.locationMeta);
+      setTxt('homeWarmupTitle', tp.warmupTitle);
+      setTxt('homeWarmupMins', `${tp.warmupMins} Min`);
+      setTxt('homeWarmupNotes', tp.warmupNotes);
+      setTxt('homeDrillsTitle', tp.drillsTitle);
+      setTxt('homeDrillsMins', `${tp.drillsMins} Min`);
+      setTxt('homeDrillsNotes', tp.drillsNotes);
+      setTxt('homeScrimmageTitle', tp.scrimmageTitle);
+      setTxt('homeScrimmageMins', `${tp.scrimmageMins} Min`);
+      setTxt('homeScrimmageNotes', tp.scrimmageNotes);
+      setTxt('homeTrainingFocusBanner', tp.dailyFocus);
+
+      const cap = state.roster.find(p => p.id === state.specialists.captain1);
+      const pk = state.roster.find(p => p.id === state.specialists.pkTaker);
+      const fk = state.roster.find(p => p.id === state.specialists.fkTaker);
+      setTxt('homeTrainingSpecialistsQuick', `Capt: #${cap ? cap.jersey : '10'} • PK: #${pk ? pk.jersey : '12'} • FK: #${fk ? fk.jersey : '10'}`);
+    }
+
+    const sorted = [...(state.matches || [])].sort((a, b) => (a.date || '').localeCompare(b.date || ''));
+    setTxt('totalMatchesCountLabel', sorted.length);
+
+    const spotlight = document.getElementById('nextMatchSpotlightCard');
+    const homeList = document.getElementById('homeUpcomingMatchesList');
+    const fullList = document.getElementById('fullMatchesScheduleList');
+
+    if (spotlight) clearEl(spotlight);
+    if (homeList) clearEl(homeList);
+    if (fullList) clearEl(fullList);
+
+    if (sorted.length === 0) {
+      if (spotlight) spotlight.appendChild(el('p', { style: 'font-size:0.78rem; color:#cbd5e1;', textContent: 'No upcoming matches scheduled yet. Use the Next Matches Manager to add games.' }));
+      if (fullList) fullList.appendChild(el('p', { style: 'font-size:0.78rem; color:#cbd5e1;', textContent: 'No matches scheduled.' }));
+      return;
+    }
+
+    const nextM = sorted[0];
+    if (spotlight) {
+      const kitTxt = nextM.venueType === 'Home'
+        ? 'Home Uniform Set (2–8, 10–13, 15–18, 20, 23–24, GK 1/14)'
+        : 'Away Uniform Set (1–2, 4, 6, 7, 10–12, 14–20, 22–23, GK 1/14)';
+
+      spotlight.appendChild(el('div', { style: 'display:flex; justify-content:space-between; align-items:center; gap:8px; margin-bottom:6px;' }, [
+        el('span', { className: 'badge badge-amber', textContent: `Next Match • ${nextM.date}` }),
+        el('span', { className: `badge ${nextM.venueType === 'Home' ? 'badge-emerald' : 'badge-sky'}`, textContent: `${nextM.venueType} • ${nextM.time}` })
+      ]));
+      spotlight.appendChild(el('div', { style: 'font-weight:800; font-size:0.95rem; color:#ffffff;', textContent: `Tolleson FR/SO vs. ${nextM.opponent}` }));
+      spotlight.appendChild(el('div', { style: 'font-size:0.74rem; color:#cbd5e1; margin-top:3px;', textContent: nextM.location }));
+      spotlight.appendChild(el('div', { style: 'font-size:0.70rem; color:#fde68a; margin-top:4px;', textContent: kitTxt }));
+    }
+
+    if (homeList) {
+      sorted.slice(1).forEach(m => {
+        homeList.appendChild(el('div', { className: 'subpanel', style: 'display:flex; justify-content:space-between; align-items:center; gap:8px; padding:8px 10px;' }, [
+          el('div', {}, [
+            el('div', { style: 'font-weight:700; font-size:0.78rem;', textContent: `${m.date} • vs. ${m.opponent}` }),
+            el('div', { style: 'font-size:0.70rem; color:#cbd5e1;', textContent: `${m.time} • ${m.location}` })
+          ]),
+          el('span', { className: `badge ${m.venueType === 'Home' ? 'badge-emerald' : 'badge-sky'}`, textContent: m.venueType })
+        ]));
+      });
+    }
+
+    if (fullList) {
+      sorted.forEach(m => {
+        const delBtn = el('button', { type: 'button', className: 'btn btn-danger btn-sm', textContent: 'Remove' });
+        delBtn.addEventListener('click', () => onDeleteMatch(m.id));
+        fullList.appendChild(el('div', { className: 'subpanel', style: 'display:flex; justify-content:space-between; align-items:center; gap:10px;' }, [
+          el('div', {}, [
+            el('div', { style: 'display:flex; gap:8px; align-items:center;' }, [
+              el('span', { style: 'font-weight:700; color:#fbbf24;', textContent: `${m.date} (${m.time})` }),
+              el('span', { className: `badge ${m.venueType === 'Home' ? 'badge-emerald' : 'badge-sky'}`, textContent: `${m.venueType} Kit` })
+            ]),
+            el('div', { style: 'font-weight:700; font-size:0.86rem; margin-top:3px;', textContent: `vs. ${m.opponent}` }),
+            el('div', { style: 'font-size:0.72rem; color:#cbd5e1;', textContent: m.location })
+          ]),
+          delBtn
+        ]));
+      });
+    }
+  }
+
+  return { renderHomeAndMatches };
+})();
+
+</script>
+  <script>
+// Practice Videos (YouTube, TikTok, Facebook) with strict URL validation & Training Exercise Breakdown
+
+window.VideosFeature = (() => {
+  const { el, clearEl } = window.AppValidation;
+
+  function renderVideosAndExercises(state, onCompleteDrill, onDeleteVideo) {
+    const exList = document.getElementById('trainingExercisesBreakdownList');
+    if (exList) {
+      clearEl(exList);
+      window.AppData.TRAINING_EXERCISES.forEach(ex => {
+        const drillBtn = el('button', {
+          type: 'button',
+          className: 'btn btn-amber btn-sm',
+          textContent: `Log Drill (+1 ${ex.boostField.toUpperCase()})`
+        });
+        drillBtn.addEventListener('click', () => onCompleteDrill(ex.boostField));
+
+        const card = el('div', { className: 'subpanel', style: 'display:flex; flex-direction:column; gap:8px;' }, [
+          el('div', { style: 'display:flex; justify-content:space-between; align-items:center; gap:8px; flex-wrap:wrap;' }, [
+            el('span', { className: 'badge badge-emerald', textContent: `${ex.phase} • ${ex.category}` }),
+            drillBtn
+          ]),
+          el('div', { style: 'font-weight:700; font-size:0.84rem; color:#ffffff;', textContent: ex.title }),
+          el('div', { style: 'font-size:0.74rem; color:#cbd5e1;', textContent: `Setup: ${ex.setup}` }),
+          el('ul', { style: 'margin:0; padding-left:18px; font-size:0.74rem; color:#e2e8f0;' },
+            ex.breakdown.map(step => el('li', { style: 'margin-bottom:3px;', textContent: step }))
+          )
+        ]);
+        exList.appendChild(card);
+      });
+    }
+
+    const vGrid = document.getElementById('practiceVideosGrid');
+    if (!vGrid) return;
+    clearEl(vGrid);
+
+    const filtered = state.videos.filter(v => state.videoFilter === 'ALL' || v.platform === state.videoFilter);
+    if (filtered.length === 0) {
+      vGrid.appendChild(el('div', { className: 'subpanel', textContent: 'No practice videos added for this platform filter yet.' }));
+      return;
+    }
+
+    const badgeMap = { YouTube: 'badge-rose', TikTok: 'badge-sky', Facebook: 'badge-amber' };
+
+    filtered.forEach(v => {
+      const delBtn = el('button', { type: 'button', className: 'btn btn-danger btn-sm', textContent: 'Remove' });
+      delBtn.addEventListener('click', () => onDeleteVideo(v.id));
+
+      const linkEl = el('a', {
+        href: v.url,
+        target: '_blank',
+        rel: 'noopener noreferrer',
+        className: 'btn btn-sky btn-sm',
+        textContent: `Open ${v.platform} Video`
+      });
+
+      const card = el('div', { className: 'subpanel', style: 'display:flex; flex-direction:column; justify-content:space-between; gap:10px;' }, [
+        el('div', { style: 'display:flex; flex-direction:column; gap:6px;' }, [
+          el('div', { style: 'display:flex; justify-content:space-between; align-items:center; gap:6px;' }, [
+            el('span', { className: `badge ${badgeMap[v.platform] || 'badge-sky'}`, textContent: v.platform }),
+            el('span', { style: 'font-size:0.70rem; color:#34d399; font-weight:700;', textContent: v.category })
+          ]),
+          el('div', { style: 'font-weight:700; font-size:0.86rem; color:#ffffff;', textContent: v.title }),
+          el('p', { style: 'margin:0; font-size:0.74rem; color:#cbd5e1;', textContent: v.notes || 'Follow coaching cues.' })
+        ]),
+        el('div', { style: 'display:flex; justify-content:space-between; align-items:center; gap:8px; padding-top:8px; border-top:1px solid #1e293b;' }, [
+          linkEl,
+          delBtn
+        ])
+      ]);
+      vGrid.appendChild(card);
+    });
+  }
+
+  return { renderVideosAndExercises };
+})();
+
+</script>
+  <script>
+// Main application bootstrap, accessible ARIA tablist controller, and event wiring.
+
+window.addEventListener('DOMContentLoaded', () => {
+  const { el, clearEl, clampInt, clampFloat, sanitizeText, validateVideoUrl, showInlineError } = window.AppValidation;
+  const data = window.AppData;
+
+  const defaultState = {
+    activeTab: 'roster',
+    selectedPlayerId: data.INITIAL_ROSTER[0].id,
+    selectedFormation: '4-3-3 Attack',
+    availableOnlyOnPitch: true,
+    videoFilter: 'ALL',
+    specialists: {
+      captain1: 'slot_9',
+      captain2: 'slot_4',
+      pkTaker: 'slot_11',
+      fkTaker: 'slot_9',
+      cornerLeft: 'slot_7',
+      cornerRight: 'slot_10'
+    },
+    trainingPlan: JSON.parse(JSON.stringify(data.INITIAL_TRAINING_PLAN)),
+    matches: JSON.parse(JSON.stringify(data.INITIAL_MATCHES)),
+    videos: JSON.parse(JSON.stringify(data.INITIAL_VIDEOS)),
+    roster: JSON.parse(JSON.stringify(data.INITIAL_ROSTER))
+  };
+
+  const state = window.AppStorage.loadState(defaultState);
+
+  function showToast(msg) {
+    const toast = document.getElementById('toastNotification');
+    const text = document.getElementById('toastText');
+    if (!toast || !text) return;
+    text.textContent = msg;
+    toast.classList.remove('hidden');
+    clearTimeout(window.__toastTimer);
+    window.__toastTimer = setTimeout(() => toast.classList.add('hidden'), 3000);
+  }
+
+  function renderTopKpis() {
+    const count = state.roster.length;
+    const consented = state.roster.filter(p => p.consentVerified).length;
+    const avgOvr = count ? Math.round(state.roster.reduce((s, p) => s + window.RosterFeature.calculateFifaOvr(p), 0) / count) : 0;
+    const avgChem = count ? Math.round(state.roster.reduce((s, p) => s + p.fifa.chemistry, 0) / count) : 0;
+    const forms = window.FormationFeature.evaluateFormations(state);
+    const topForm = forms[0] || { name: '4-3-3 Attack', fitScore: 0 };
+    const avgAtt = count ? Math.round(state.roster.reduce((s, p) => s + p.attendance.rate, 0) / count) : 0;
+    const presentToday = state.roster.filter(p => p.attendance.status === 'Present' || p.attendance.status === 'Late').length;
+    const avgFit = count ? Math.round(state.roster.reduce((s, p) => s + p.fitness.stamina, 0) / count) : 0;
+    const avgSprint = count ? (state.roster.reduce((s, p) => s + p.fitness.sprint40, 0) / count).toFixed(2) : '0.00';
+    const goals = state.roster.reduce((s, p) => s + p.stats.goals, 0);
+    const assists = state.roster.reduce((s, p) => s + p.stats.assists, 0);
+
+    const setTxt = (id, v) => { const n = document.getElementById(id); if (n) n.textContent = v; };
+    setTxt('kpiRosterCount', count);
+    setTxt('kpiLinkedCount', `${consented}/${count} Consent OK`);
+    setTxt('kpiAvgOvr', avgOvr);
+    setTxt('kpiTeamChem', `Chem: ${avgChem}/99`);
+    setTxt('kpiBestFormation', topForm.name);
+    setTxt('kpiBestFormScore', `${topForm.fitScore}% Fit`);
+    setTxt('kpiAttendanceRate', `${avgAtt}%`);
+    setTxt('kpiPresentRatio', `${presentToday}/${count} Today`);
+    setTxt('kpiAvgFitness', `${avgFit}%`);
+    setTxt('kpiAvgSprint', `${avgSprint}s 40yd`);
+    setTxt('kpiTotalGoals', `${goals} G`);
+    setTxt('kpiTotalAssists', `${assists} Assists`);
+  }
+
+  function renderProfileTab() {
+    const sel = document.getElementById('profileRosterSelect');
+    if (!sel) return;
+    const currentId = sel.value || state.selectedPlayerId || state.roster[0]?.id;
+    clearEl(sel);
+    state.roster.forEach(p => {
+      sel.appendChild(el('option', {
+        value: p.id,
+        selected: p.id === currentId,
+        textContent: `#${p.jersey} — ${p.label} (${p.position} • ${p.foot} Ft)`
+      }));
+    });
+    const active = state.roster.find(p => p.id === sel.value) || state.roster[0];
+    if (active) {
+      document.getElementById('profileLabelInput').value = active.label;
+      document.getElementById('profileFootSelect').value = active.foot;
+      document.getElementById('profileWeakFootSelect').value = active.weakFoot || '4★ Weak Foot';
+      document.getElementById('profileConsentCheck').checked = Boolean(active.consentVerified);
+
+      const uniSel = document.getElementById('profileUniformSelect');
+      clearEl(uniSel);
+      data.ALL_VALID_UNIFORM_NUMBERS.forEach(n => {
+        uniSel.appendChild(el('option', {
+          value: n,
+          selected: Number(active.jersey) === n,
+          textContent: `#${n}`
+        }));
+      });
+    }
+  }
+
+  function renderAll() {
+    window.AppStorage.saveState(state);
+    renderTopKpis();
+    window.MatchesTrainingFeature.renderHomeAndMatches(state, (matchId) => {
+      state.matches = state.matches.filter(m => m.id !== matchId);
+      renderAll();
+      showToast('Removed match from local schedule.');
+    });
+    window.RosterFeature.renderRosterGrid(state, (id) => {
+      state.selectedPlayerId = id;
+      window.RosterFeature.renderRosterGrid(state, () => {});
+      renderAll();
+    });
+    window.RosterFeature.renderInspector(state);
+    window.FormationFeature.renderFormationTab(state, (id) => {
+      state.selectedPlayerId = id;
+      switchTab('roster');
+      showToast('Opened roster slot in FIFA Rating Studio.');
+    });
+    window.AttendanceStatsFeature.renderStatsAndFitness(state, renderAll, (id) => {
+      state.selectedPlayerId = id;
+      switchTab('roster');
+    });
+    window.AttendanceStatsFeature.renderAttendanceAndFoot(state, renderAll);
+    window.VideosFeature.renderVideosAndExercises(state, (attr) => {
+      state.roster.forEach(p => {
+        if (p.attendance.status === 'Present' || p.attendance.status === 'Late') {
+          p.fifa[attr] = Math.min(99, p.fifa[attr] + 1);
+        }
+      });
+      renderAll();
+      showToast(`Logged drill! Active players gained +1 ${attr.toUpperCase()}.`);
+    }, (vidId) => {
+      state.videos = state.videos.filter(v => v.id !== vidId);
+      renderAll();
+      showToast('Removed practice video.');
+    });
+    renderProfileTab();
+  }
+
+  // Accessible WAI-ARIA Tab Switching + Arrow Key Support
+  const tabButtons = Array.from(document.querySelectorAll('[role="tab"]'));
+  function switchTab(tabId) {
+    state.activeTab = tabId;
+    tabButtons.forEach(btn => {
+      const isSelected = btn.getAttribute('data-tab') === tabId;
+      btn.setAttribute('aria-selected', isSelected ? 'true' : 'false');
+      btn.setAttribute('tabindex', isSelected ? '0' : '-1');
+    });
+    document.querySelectorAll('[role="tabpanel"]').forEach(panel => {
+      panel.classList.toggle('hidden', panel.id !== `panel-${tabId}`);
+    });
+    renderAll();
+  }
+
+  tabButtons.forEach((btn, idx) => {
+    btn.addEventListener('click', () => switchTab(btn.getAttribute('data-tab')));
+    btn.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') {
+        e.preventDefault();
+        const next = tabButtons[(idx + 1) % tabButtons.length];
+        next.focus();
+        switchTab(next.getAttribute('data-tab'));
+      } else if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        const prev = tabButtons[(idx - 1 + tabButtons.length) % tabButtons.length];
+        prev.focus();
+        switchTab(prev.getAttribute('data-tab'));
+      }
+    });
+  });
+
+  // Search & Filter
+  ['searchRosterInput', 'filterSchoolSelect', 'filterPositionSelect', 'sortRosterSelect'].forEach(id => {
+    const elNode = document.getElementById(id);
+    if (elNode) elNode.addEventListener('input', () => renderAll());
+  });
+
+  // Inspector Edits
+  const bindInspector = (id, fn) => {
+    const node = document.getElementById(id);
+    if (!node) return;
+    node.addEventListener('input', () => {
+      const p = state.roster.find(x => x.id === state.selectedPlayerId);
+      if (!p) return;
+      fn(p, node.value);
+      renderAll();
+    });
+  };
+  bindInspector('editJerseyInput', (p, v) => { p.jersey = clampInt(v, 0, 99, p.jersey); });
+  bindInspector('editNameInput', (p, v) => { const s = sanitizeText(v, 50); if (s) p.label = s; });
+  bindInspector('editPositionInput', (p, v) => { p.position = v; });
+  bindInspector('editFootInput', (p, v) => { p.foot = v; });
+  bindInspector('sliderSpeed', (p, v) => { p.fifa.speed = clampInt(v, 40, 99, p.fifa.speed); });
+  bindInspector('sliderStrength', (p, v) => { p.fifa.strength = clampInt(v, 40, 99, p.fifa.strength); });
+  bindInspector('sliderBallControl', (p, v) => { p.fifa.ballControl = clampInt(v, 40, 99, p.fifa.ballControl); });
+  bindInspector('sliderLongPass', (p, v) => { p.fifa.longPass = clampInt(v, 40, 99, p.fifa.longPass); });
+  bindInspector('sliderVision', (p, v) => { p.fifa.vision = clampInt(v, 40, 99, p.fifa.vision); });
+  bindInspector('sliderChemistry', (p, v) => { p.fifa.chemistry = clampInt(v, 40, 99, p.fifa.chemistry); });
+
+  document.getElementById('btnDeleteSelectedPlayer')?.addEventListener('click', () => {
+    if (state.roster.length <= 1) {
+      showToast('Cannot delete the last remaining roster slot.');
+      return;
+    }
+    const idx = state.roster.findIndex(x => x.id === state.selectedPlayerId);
+    if (idx !== -1) {
+      const removed = state.roster.splice(idx, 1)[0];
+      state.selectedPlayerId = state.roster[0].id;
+      renderAll();
+      showToast(`Removed #${removed.jersey} ${removed.label}.`);
+    }
+  });
+
+  // Specialists
+  [
+    ['selectCaptain1', 'captain1'], ['selectCaptain2', 'captain2'],
+    ['selectPkTaker', 'pkTaker'], ['selectFkTaker', 'fkTaker'],
+    ['selectCornerLeft', 'cornerLeft'], ['selectCornerRight', 'cornerRight']
+  ].forEach(([id, key]) => {
+    document.getElementById(id)?.addEventListener('change', (e) => {
+      state.specialists[key] = e.target.value;
+      renderAll();
+      showToast('Updated specialist assignment.');
+    });
+  });
+
+  document.getElementById('btnAutoPickSpecialists')?.addEventListener('click', () => {
+    const byLead = [...state.roster].sort((a, b) => (b.fifa.chemistry + b.fifa.vision) - (a.fifa.chemistry + a.fifa.vision));
+    const byPk = [...state.roster].sort((a, b) => (b.fifa.ballControl + b.fifa.vision) - (a.fifa.ballControl + a.fifa.vision));
+    const byFk = [...state.roster].sort((a, b) => (b.fifa.longPass + b.fifa.ballControl) - (a.fifa.longPass + a.fifa.ballControl));
+    const rFoot = state.roster.filter(p => p.foot.startsWith('Right') || p.foot.startsWith('Both')).sort((a, b) => b.fifa.longPass - a.fifa.longPass);
+    const lFoot = state.roster.filter(p => p.foot.startsWith('Left') || p.foot.startsWith('Both')).sort((a, b) => b.fifa.longPass - a.fifa.longPass);
+
+    state.specialists.captain1 = byLead[0]?.id;
+    state.specialists.captain2 = byLead[1]?.id;
+    state.specialists.pkTaker = byPk[0]?.id;
+    state.specialists.fkTaker = byFk[0]?.id;
+    state.specialists.cornerLeft = (rFoot[0] || byFk[0])?.id;
+    state.specialists.cornerRight = (lFoot[0] || byFk[1] || byFk[0])?.id;
+    renderAll();
+    showToast('Auto-selected Captains and Set-Piece takers.');
+  });
+
+  document.getElementById('chkAvailableOnly')?.addEventListener('change', (e) => {
+    state.availableOnlyOnPitch = e.target.checked;
+    renderAll();
+  });
+
+  // Attendance quick actions
+  document.getElementById('btnMarkAllPresent')?.addEventListener('click', () => {
+    state.roster.forEach(p => {
+      p.attendance.status = 'Present';
+      p.attendance.week = { Mon: 'P', Tue: 'P', Wed: 'P', Thu: 'P', Fri: 'P' };
+      window.AttendanceStatsFeature.recomputeWeeklyRate(p);
+    });
+    renderAll();
+    showToast('Marked all 22 slots Present for Mon–Fri.');
+  });
+
+  // Training Day Builder Form
+  document.getElementById('formTrainingDayBuilder')?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const title = sanitizeText(document.getElementById('trainSessionTitleInput').value, 100);
+    const meta = sanitizeText(document.getElementById('trainLocationMetaInput').value, 120);
+    if (!title || !meta) {
+      showInlineError('trainingFormError', 'Session title and practice time/location are required.');
+      return;
+    }
+    showInlineError('trainingFormError', '');
+    state.trainingPlan = {
+      sessionTitle: title,
+      locationMeta: meta,
+      warmupTitle: document.getElementById('trainWarmupPresetSelect').value,
+      warmupMins: clampInt(document.getElementById('trainWarmupMinsInput').value, 5, 45, 15),
+      warmupNotes: sanitizeText(document.getElementById('trainWarmupNotesInput').value, 180),
+      drillsTitle: document.getElementById('trainDrill1Select').value,
+      drillsMins: clampInt(document.getElementById('trainDrillsMinsInput').value, 10, 60, 40),
+      drillsNotes: sanitizeText(document.getElementById('trainDrillsNotesInput').value, 180),
+      scrimmageTitle: document.getElementById('trainScrimmagePresetSelect').value,
+      scrimmageMins: clampInt(document.getElementById('trainScrimmageMinsInput').value, 10, 60, 35),
+      scrimmageNotes: sanitizeText(document.getElementById('trainScrimmageNotesInput').value, 180),
+      dailyFocus: sanitizeText(document.getElementById('trainDailyFocusInput').value, 200)
+    };
+    renderAll();
+    showToast('Published Training Day breakdown to Home Screen!');
+  });
+
+  // Add Next Match Form
+  document.getElementById('formAddNextMatch')?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const opponent = sanitizeText(document.getElementById('matchOpponentInput').value, 80);
+    const date = document.getElementById('matchDateInput').value;
+    const time = sanitizeText(document.getElementById('matchTimeInput').value, 20);
+    if (!opponent || !date || !time) {
+      showInlineError('matchFormError', 'Please provide opponent, date, and kickoff time.');
+      return;
+    }
+    showInlineError('matchFormError', '');
+    state.matches.push({
+      id: 'm_' + Date.now(),
+      date,
+      opponent,
+      venueType: document.getElementById('matchVenueTypeSelect').value,
+      time,
+      location: sanitizeText(document.getElementById('matchLocationInput').value, 100) || 'Stadium TBD'
+    });
+    document.getElementById('matchOpponentInput').value = '';
+    document.getElementById('matchLocationInput').value = '';
+    renderAll();
+    showToast(`Added match vs. ${opponent} (${date}).`);
+  });
+
+  // Practice Video Form with Strict URL Validation
+  document.getElementById('formAddPracticeVideo')?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const platform = document.getElementById('videoPlatformSelect').value;
+    const title = sanitizeText(document.getElementById('videoTitleInput').value, 100);
+    const category = document.getElementById('videoExerciseCategory').value;
+    const rawUrl = document.getElementById('videoUrlInput').value;
+    const notes = sanitizeText(document.getElementById('videoNotesInput').value, 180);
+
+    if (!title) {
+      showInlineError('videoFormError', 'Please enter a drill or video title.');
+      return;
+    }
+    const urlCheck = validateVideoUrl(rawUrl, platform);
+    if (!urlCheck.valid) {
+      showInlineError('videoFormError', urlCheck.error);
+      return;
+    }
+    showInlineError('videoFormError', '');
+    state.videos.unshift({
+      id: 'vid_' + Date.now(),
+      platform,
+      title,
+      category,
+      url: urlCheck.url,
+      notes
+    });
+    document.getElementById('formAddPracticeVideo').reset();
+    renderAll();
+    showToast(`Validated and added ${platform} practice video.`);
+  });
+
+  document.querySelectorAll('.video-filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      state.videoFilter = btn.getAttribute('data-video-filter');
+      renderAll();
+    });
+  });
+
+  // Profile Slot Update (Privacy-safe: NO selfies, NO handles, requires guardian consent)
+  document.getElementById('profileRosterSelect')?.addEventListener('change', renderProfileTab);
+  document.getElementById('playerProfileForm')?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const pid = document.getElementById('profileRosterSelect').value;
+    const p = state.roster.find(x => x.id === pid);
+    if (!p) return;
+    const consent = document.getElementById('profileConsentCheck').checked;
+    if (!consent) {
+      showInlineError('profileFormError', 'Guardian consent confirmation is required before saving minor roster slot preferences.');
+      return;
+    }
+    showInlineError('profileFormError', '');
+    const lbl = sanitizeText(document.getElementById('profileLabelInput').value, 45);
+    if (lbl) p.label = lbl;
+    p.jersey = clampInt(document.getElementById('profileUniformSelect').value, 0, 99, p.jersey);
+    p.foot = document.getElementById('profileFootSelect').value;
+    p.weakFoot = document.getElementById('profileWeakFootSelect').value;
+    p.consentVerified = true;
+    renderAll();
+    showToast(`Saved non-PII slot preferences for #${p.jersey} ${p.label}.`);
+  });
+
+  // Add Roster Slot Modal
+  const addModal = document.getElementById('modalAddPlayer');
+  document.getElementById('btnOpenAddPlayer')?.addEventListener('click', () => addModal.classList.remove('hidden'));
+  document.getElementById('btnCloseAddPlayer')?.addEventListener('click', () => addModal.classList.add('hidden'));
+  document.getElementById('formAddPlayer')?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const lbl = sanitizeText(document.getElementById('newPlayerName').value, 45);
+    if (!lbl) {
+      showInlineError('addPlayerError', 'Please enter a non-identifying slot label or initials (e.g., Slot #23 (M.V.)).');
+      return;
+    }
+    showInlineError('addPlayerError', '');
+    const jersey = clampInt(document.getElementById('newPlayerJersey').value, 0, 99, 23);
+    const p = {
+      id: 'slot_' + Date.now(),
+      rosterOrder: state.roster.length + 1,
+      jersey,
+      label: lbl,
+      grade: clampInt(document.getElementById('newPlayerGrade').value, 9, 12, 10),
+      school: document.getElementById('newPlayerSchool').value,
+      position: document.getElementById('newPlayerPos').value,
+      foot: document.getElementById('newPlayerFoot').value,
+      weakFoot: '4★ Weak Foot',
+      consentVerified: Boolean(document.getElementById('newPlayerConsent').checked),
+      fifa: {
+        speed: clampInt(document.getElementById('newPlayerSpeed').value, 40, 99, 78),
+        strength: clampInt(document.getElementById('newPlayerStrength').value, 40, 99, 76),
+        ballControl: clampInt(document.getElementById('newPlayerControl').value, 40, 99, 77),
+        longPass: clampInt(document.getElementById('newPlayerPass').value, 40, 99, 75),
+        vision: clampInt(document.getElementById('newPlayerVision').value, 40, 99, 76),
+        chemistry: clampInt(document.getElementById('newPlayerChem').value, 40, 99, 80)
+      },
+      stats: { goals: 0, assists: 0, minutes: 0 },
+      fitness: { sprint40: 4.75, beepLevel: 12.0, stamina: 90 },
+      attendance: { status: 'Present', rate: 100, week: { Mon: 'P', Tue: 'P', Wed: 'P', Thu: 'P', Fri: 'P' } }
+    };
+    state.roster.push(p);
+    state.selectedPlayerId = p.id;
+    addModal.classList.add('hidden');
+    document.getElementById('formAddPlayer').reset();
+    renderAll();
+    showToast(`Added #${p.jersey} ${p.label} to local roster.`);
+  });
+
+  // Resilient Backup / Export & Restore / Import JSON
+  document.getElementById('btnExportBackup')?.addEventListener('click', () => {
+    window.AppStorage.exportBackupJson(state);
+    showToast('Exported JSON backup of your team data.');
+  });
+
+  document.getElementById('inputRestoreBackup')?.addEventListener('change', (e) => {
+    const file = e.target.files && e.target.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = (ev) => {
+      try {
+        const parsed = JSON.parse(ev.target.result);
+        const check = window.AppStorage.validateImportedBackup(parsed);
+        if (!check.valid) {
+          showToast(check.error);
+          return;
+        }
+        state.roster = check.data.roster;
+        if (check.data.specialists) state.specialists = check.data.specialists;
+        if (Array.isArray(check.data.videos)) state.videos = check.data.videos;
+        if (check.data.trainingPlan) state.trainingPlan = check.data.trainingPlan;
+        if (Array.isArray(check.data.matches)) state.matches = check.data.matches;
+        state.selectedPlayerId = state.roster[0].id;
+        renderAll();
+        showToast(`Restored ${state.roster.length} roster slots from backup JSON.`);
+      } catch (err) {
+        showToast('Failed to parse backup JSON file.');
+      }
+    };
+    reader.readAsText(file);
+  });
+
+  // Quick Home Navigation Buttons
+  document.getElementById('btnCoachEditTrainingPlan')?.addEventListener('click', () => switchTab('matches'));
+  document.getElementById('btnCoachOpenAddMatch')?.addEventListener('click', () => switchTab('matches'));
+
+  renderAll();
+});
+
+</script>
+</body>
+</html>
